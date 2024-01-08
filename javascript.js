@@ -1,4 +1,4 @@
-/////////////// 1. 문자열 뒤집기
+/////////////// 1. 문자열 뒤집기 ////////////////
 
 // my_string : 문자열
 // s : 정수 (시작점)
@@ -19,7 +19,7 @@ const solution1 = (my_string, s, e) => {
   return splitMyString.join("");
 };
 
-/////////////// 2. 문자열 뒤집기
+/////////////// 2. 수 조작하기 ////////////////
 
 //정수 n 과 문자열 control 이 주어집니다.
 //control 은 "w", "a", "s", "d"의 4개의 문자로 이루 어져 있으며,
@@ -51,7 +51,7 @@ const solution2_1 = (n, control) => {
   return n;
 };
 
-// 다름 풀이
+// 다른 풀이
 const operations = {
   w: (n) => n + 1,
   s: (n) => n - 1,
@@ -78,3 +78,36 @@ function solution2_2(n, control) {
 // function(parameter) 처럼 prev 가 초기값(n) 이 0 이라면
 // operations[op] 라는 함수의 이름에 parameter(0) 이 들어가는 형태이므로
 // operations[op](prev) = (prev) => prev + 1 이 되는 뜻이였다.
+
+/////////////// 3. 등차수열의 특정한 항만 더하기 ///////////////
+
+// 문제
+// 두 정수 a, d와 길이가 n 인 boolean 배열 included 가 주어집니다. 첫째항이 a, 공차가
+// d 인 등차수열에서 included[1] 가+ 1항을 의미할 때, 이 등차수열의 1항부터 n항까지
+// incLuded 가 true인 항들만 더한 값을 return 하는 solution 함수를 작성해 주세요
+
+// 생각
+// 1. a는 d 만큼 등차수열이 된다
+// 2. included 의 index 길이만큼 등차수열을 적용해서 나열한다.
+//    ( 내가 지정한 값만큼 등차수열로 적용할 수 있게 만들어야해서 반복문을 사용해야겠다 라고 생각했고
+//      나열한 것들을 다음 작업을 위해 배열에 담아야겠다고 생각했다. ) ( map() 메소드 )
+// 3. 같은 index 위치의 값을 비교하여 true 인 것들을 찾아낸다.
+//    ( 등차수열을 적용한 배열과 included 의 배열을 비교해서 true 인 등차수열 값을 도출해야한다 ) ( if() 메소드 )
+// 4. 해당 결과값 리턴
+
+const solution3 = (a, b, included) => {
+  let arr = [];
+  let result = 0;
+
+  included.map((i) => {
+    arr.push(a);
+    a += b;
+  });
+
+  for (i = 0; i < arr.length; i++) {
+    if (included[i] === true) {
+      result += arr[i];
+    }
+  }
+  return result;
+};
