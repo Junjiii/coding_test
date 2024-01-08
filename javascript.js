@@ -111,3 +111,26 @@ const solution3 = (a, b, included) => {
   }
   return result;
 };
+
+/////////////// 4. ad 값 제거하기 ///////////////
+
+// 문제
+// 문자열 배열 strArr가 주어집니다.
+// 배열 내의 문자열 중 "ad"라는 부분 문자열을 포함하고 있는 모든 문자열을 제거하고 남은 문자열을 순서를 유지하여
+// 배열로 return 하는 solution 함수를 완성해 주세요.
+
+// 생각
+// 1. 배열을 순회하며 무언가를 한다. ( reduce() 메소드 )
+// 2. "ad" 포함 여부를 확인한다. ( includes() 메소드 )
+// 3. 새로운 배열에 추가하여 재구성한다. (push() 메소드 )
+// 4. 값을 리턴한다.
+
+const solution4 = (strArr) => {
+  const result = strArr.reduce((acc, flag) => {
+    if (!flag.includes("ad")) {
+      acc.push(flag);
+    }
+    return acc;
+  }, []);
+  return result;
+};
