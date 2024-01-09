@@ -145,6 +145,29 @@ const solution4 = (strArr) => {
 // 1. k 만큼 반복 생성
 // 2. 생성한 문자열 합치기 ( repeat() 메소드 )
 
-const solution = (my_string, k) => {
+const solution5 = (my_string, k) => {
   return my_string.repeat(k);
+};
+
+/////////////// 6. 문자열 섞기  ///////////////
+
+// 문제
+// 길이가 같은 두 문자열 str1과 str2가 주어집니다.
+// 두 문자열의 각 문자가 앞에서부터 서로 번갈아가면서 한 번씩 등장하는 문자열을 만들어
+// return 하는 solution 함수를 완성해 주세요.
+
+// 생각
+// 1. 각각 한 문자씩 쪼개서 배열화 한다. ( [...] 전개연산자 메소드 )
+// 2. 반복하여 새배열에 번갈아 넣는다. ( for, push() 메소드 )
+// 3. 합쳐서 결과물 리턴한다. ( join() 메소드)
+
+const solution6 = (str1, str2) => {
+  let a = [...str1];
+  let b = [...str2];
+  let c = [];
+  for (let i = 0; i < a.length; i++) {
+    c.push(a[i]);
+    c.push(b[i]);
+  }
+  return c.join("");
 };
