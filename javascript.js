@@ -180,3 +180,12 @@ const solution6 = (str1, str2) => {
 const solution7 = (num1, num2) => {
   return num1 + num2;
 };
+
+////////////// 8. 두 수의 차  ///////////////
+
+// 문제
+// 정수 num1과 num2가 주어질 때, num1에서 num2를 뺀 값을 return하도록 soltuion 함수를 완성해주세요.
+
+const solution8 = (num1, num2) => {
+  return num1 - num2;
+};
