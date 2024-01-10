@@ -189,3 +189,34 @@ const solution7 = (num1, num2) => {
 const solution8 = (num1, num2) => {
   return num1 - num2;
 };
+
+/////////////// 9. 머쓱이보다 키가 큰 사람  ///////////////
+
+// 문제
+// 머쓱이는 학교에서 키 순으로 줄을 설 때 몇 번째로 서야 하는지 궁금해졌습니다.
+// 머쓱이네 반 친구들의 키가 담긴 정수 배열 array와 머쓱이의 키 height가 매개변수로 주어질 때,
+// 머쓱이보다 키 큰 사람 수를 return 하도록 solution 함수를 완성해보세요.
+
+// 생각
+// 1. 배열은 순회한다.( reduce() 메소드 )
+// 2. index 값과 height 를 비교한다. (if 메소드 )
+
+const solution9 = (array, height) => {
+  return array.reduce((acc, flag) => {
+    if (flag > height) {
+      acc += 1;
+    }
+    return acc;
+  }, 0);
+};
+
+// 다른사람 풀이
+
+const solution9_1 = (array, height) => {
+  var answer = array.filter((item) => item > height);
+  return answer.length;
+};
+
+// filter 메소드
+// filter 는 배열에 사용하며, 주어진 함수를 만족하는 모든 요소를 모아 새 배열로 반환한다.
+// filter() 를 통해 item 과 height 의 크기 비교 후 만족하는 값만 새배열로 반환시켰다.
