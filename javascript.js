@@ -220,3 +220,16 @@ const solution9_1 = (array, height) => {
 // filter 메소드
 // filter 는 배열에 사용하며, 주어진 함수를 만족하는 모든 요소를 모아 새 배열로 반환한다.
 // filter() 를 통해 item 과 height 의 크기 비교 후 만족하는 값만 새배열로 반환시켰다.
+
+/////////////// 10. flag에 따라 다른 값 반환하기  ///////////////
+
+// 문제
+// 두 정수 a, b와 boolean 변수 flag가 매개변수로 주어질 때,
+// flag가 true면 a + b를 false면 a - b를 return 하는 solution 함수를 작성해 주세요.
+
+// 생각
+// flag 값이 true & false 인지 확인한다 ( 삼한연산자 메소드 )
+
+const solution10 = (a, b, flag) => {
+  return flag === true ? a + b : a - b;
+};
