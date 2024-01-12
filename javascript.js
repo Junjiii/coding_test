@@ -290,3 +290,22 @@ const solution12 = (num_list, n) => {
 const solution13 = (string, include) => {
   return Number(string.endsWith(include));
 };
+
+/////////////// 14. n개 간격의 원소들   ///////////////
+
+// 문제
+// 정수 리스트 num_list와 정수 n이 주어질 때, \
+// num_list의 첫 번째 원소부터 마지막 원소까지 n개 간격으로 저장되어있는
+// 원소들을 차례로 담은 리스트를 return하도록 solution 함수를 완성해주세요.
+
+// 생각
+// 1. 일정 간격으로 주어진 배열 안에서 n개 이후의 값을 찾아낸다 ( for() 메소드 )
+// 2. 찾아낸 값을 새로운 배열에 추가해서 리턴한다. ( push() 메소드 )
+
+const solution14 = (num_list, n) => {
+  const result = [];
+  for (i = 0; i < num_list.length; i += n) {
+    result.push(num_list[i]);
+  }
+  return result;
+};
