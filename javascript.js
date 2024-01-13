@@ -332,3 +332,21 @@ const solution15 = (str, m, c) => {
   }
   return arr.join("");
 };
+
+/////////////// 16. 배열 만들기 1   ///////////////
+
+// 문제
+// 정수 n과 k가 주어졌을 때, 1 이상 n이하의 정수 중에서 k의 배수를 오름차순으로
+// 저장한 배열을 return 하는 solution 함수를 완성해 주세요.
+
+// 생각
+// 1. k  배수만큼 n 숫자까지 반복적으로 처리해야한다 (for() 메소드 )
+// 2. 빈 배열에 추가하여 리턴한다.
+
+const solution16 = (n, k) => {
+  const arr = [];
+  for (i = k; i <= n; i += k) {
+    arr.push(i);
+  }
+  return arr;
+};
