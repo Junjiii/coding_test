@@ -309,3 +309,44 @@ const solution14 = (num_list, n) => {
   }
   return result;
 };
+
+/////////////// 15. 세로 읽기   ///////////////
+
+// 문제
+// 문자열 my_string과 두 정수 m, c가 주어집니다.
+// my_string을 한 줄에 m 글자씩 가로로 적었을 때
+// 왼쪽부터 세로로 c번째 열에 적힌 글자들을 문자열로 return 하는 solution 함수를 작성해 주세요.
+
+// 생각
+// 1. 반복문을 사용하되 index가 m 값만큼 증가한다. ( for() 메소드 )
+// 2. 문자열에서 원하는 값만큼 잘라내야하는데 slice는 시작지점 끝지점으로 지정해야해서 불편함
+//  따라서 substr() 메소드로 시작지점, 잘라낼 갯수 로 지정하기로함
+// 3. 다시한번 더 substr 을 사용하여 c 번쨰 단어 1개를 잘라냄 ( substr(c-1,1) )
+// 4. 배열에 각각 추가하여 합쳐서 리턴한다. ( push(), join())
+
+const solution15 = (str, m, c) => {
+  const arr = [];
+  for (i = 0; i < str.length; i += m) {
+    const string = str.substr(i, m);
+    arr.push(string.substr(c - 1, 1));
+  }
+  return arr.join("");
+};
+
+/////////////// 16. 배열 만들기 1   ///////////////
+
+// 문제
+// 정수 n과 k가 주어졌을 때, 1 이상 n이하의 정수 중에서 k의 배수를 오름차순으로
+// 저장한 배열을 return 하는 solution 함수를 완성해 주세요.
+
+// 생각
+// 1. k  배수만큼 n 숫자까지 반복적으로 처리해야한다 (for() 메소드 )
+// 2. 빈 배열에 추가하여 리턴한다.
+
+const solution16 = (n, k) => {
+  const arr = [];
+  for (i = k; i <= n; i += k) {
+    arr.push(i);
+  }
+  return arr;
+};
