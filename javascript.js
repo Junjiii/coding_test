@@ -385,3 +385,15 @@ const solution17_2 = (arr, idx) => {
 // findIndex()
 // (callback) callback 함수에 조건에 맞는 것을 반환한다.
 // 조건에 일치하는 것이 없다면? -1 (false) 를 반환한다.
+
+/////////////// 18. 문자열의 뒤 n글자   ///////////////
+
+// 문제
+// 문자열 my_string과 정수 n이 매개변수로 주어질 때,
+// my_string의 뒤의 n글자로 이루어진 문자열을 return 하는 solution 함수를 작성해 주세요.
+
+// 생각
+// 1. 뒤부터 n 개의 글자  = 자르는 시작 지점은 my_string.length - n
+// 2. substr()를 사용해 시작 지점부터 끝까지 잘라내 반환하기
+
+const solution18 = (string, n) => string.substr(string.length - n);
