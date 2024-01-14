@@ -350,3 +350,38 @@ const solution16 = (n, k) => {
   }
   return arr;
 };
+
+/////////////// 17. 가까운 1 찾기  ///////////////
+
+// 문제
+// 정수 배열 arr가 주어집니다. 이때 arr의 원소는 1 또는 0입니다.
+// 정수 idx가 주어졌을 때, idx보다 크면서 배열의 값이 1인 가장 작은 인덱스를 찾아서 반환하는 solution 함수를 완성해 주세요.
+// 단, 만약 그러한 인덱스가 없다면 -1을 반환합니다.
+
+// 생각
+// 1. 결과값은 조건에 맞는 index 다.
+// 2. 조건은 idx 보다 큰 index 중에 값이 1 인 index
+// 3. 반복적으로 수행해서 판별 후 리턴한다. (for () 메소드 )
+
+const solution17_1 = (arr, idx) => {
+  let result;
+  for (i = idx; i <= arr.length; i++) {
+    if (arr[i] === 1) {
+      result = i;
+      break;
+    } else {
+      result = -1;
+    }
+  }
+  return result;
+};
+
+/////// 다른 사람 풀이
+
+const solution17_2 = (arr, idx) => {
+  return arr.findIndex((flag, i) => idx <= i && flag === 1);
+};
+
+// findIndex()
+// (callback) callback 함수에 조건에 맞는 것을 반환한다.
+// 조건에 일치하는 것이 없다면? -1 (false) 를 반환한다.
