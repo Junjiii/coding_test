@@ -397,3 +397,60 @@ const solution17_2 = (arr, idx) => {
 // 2. substr()를 사용해 시작 지점부터 끝까지 잘라내 반환하기
 
 const solution18 = (string, n) => string.substr(string.length - n);
+
+/////////////// 19. 리스트 자르기   ///////////////
+
+// 문제
+// 정수 n과 정수 3개가 담긴 리스트 slicer 그리고 정수 여러 개가 담긴 리스트 num_list가 주어집니다.
+// slicer에 담긴 정수를 차례대로 a, b, c라고 할 때, n에 따라 다음과 같이 num_list를 슬라이싱 하려고 합니다.
+
+// n = 1 : num_list의 0번 인덱스부터 b번 인덱스까지
+// n = 2 : num_list의 a번 인덱스부터 마지막 인덱스까지
+// n = 3 : num_list의 a번 인덱스부터 b번 인덱스까지
+// n = 4 : num_list의 a번 인덱스부터 b번 인덱스까지 c 간격으로
+
+// 올바르게 슬라이싱한 리스트를 return하도록 solution 함수를 완성해주세요.
+
+// 생각
+// 1. 각 n 마다 조건이 맞는 배열의 요소를 잘라내야한다 (slice())
+// 2. 각 n 마다 이뤄지는 기능이 다르다. (swich...case 메소드 )
+// 2.  n 이 4 일때 c 간격의 요소를 찾아낸다 = 간격이라는 얘기는 a부터 b까지의 index 중 c 로 나누었을때 나머지가 0인 경우이다.
+// 3. 위 조건을 코드로 !index%c) 이렇게 표현이 가능하다.
+
+const solution19 = (n, slicer, num_list) => {
+  let [a, b, c] = [...slicer];
+  switch (n) {
+    case 1:
+      return num_list.slice(0, b + 1);
+    case 2:
+      return num_list.slice(a);
+    case 3:
+      return num_list.slice(a, b + 1);
+    case 4:
+      return num_list.slice(a, b + 1).filter((_, idx) => !(idx % c));
+  }
+};
+
+/////////////// 20. 첫번쨰로 나오는 음수   ///////////////
+
+// 문제
+// 정수 리스트 num_list가 주어질 때,
+// 첫 번째로 나오는 음수의 인덱스를 return하도록 solution 함수를 완성해주세요. 음수가 없다면 -1을 return합니다.
+
+// 생각
+// 1. 반복적 수행 ( for() )
+// 2. 조건에 맞는 것을 찾으면 반복문 종료 ( if() break )
+
+const solution20_1 = (num_list) => {
+  for (i = 0; i <= num_list.length; i++) {
+    if (num_list[i] < 0) {
+      return i;
+      break;
+    }
+  }
+  return -1;
+};
+
+////// 다른 사람 풀이
+
+const solution = (num_list) => num_list.findIndex((v) => v < 0);
