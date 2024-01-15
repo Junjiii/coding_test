@@ -430,3 +430,27 @@ const solution19 = (n, slicer, num_list) => {
       return num_list.slice(a, b + 1).filter((_, idx) => !(idx % c));
   }
 };
+
+/////////////// 20. 첫번쨰로 나오는 음수   ///////////////
+
+// 문제
+// 정수 리스트 num_list가 주어질 때,
+// 첫 번째로 나오는 음수의 인덱스를 return하도록 solution 함수를 완성해주세요. 음수가 없다면 -1을 return합니다.
+
+// 생각
+// 1. 반복적 수행 ( for() )
+// 2. 조건에 맞는 것을 찾으면 반복문 종료 ( if() break )
+
+const solution20_1 = (num_list) => {
+  for (i = 0; i <= num_list.length; i++) {
+    if (num_list[i] < 0) {
+      return i;
+      break;
+    }
+  }
+  return -1;
+};
+
+////// 다른 사람 풀이
+
+const solution = (num_list) => num_list.findIndex((v) => v < 0);
