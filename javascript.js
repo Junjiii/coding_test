@@ -500,3 +500,33 @@ const solution22 = (arr) => {
 
   return startIdx + endIdx < 1 ? [-1] : arr.slice(startIdx, endIdx + 1);
 };
+
+/////////////// 23. 1로 만들기    ///////////////
+
+// 문제
+// 정수가 있을 때, 짝수라면 반으로 나누고, 홀수라면 1을 뺀 뒤 반으로 나누면, 마지막엔 1이 됩니다.
+// 예를 들어 10이 있다면 다음과 같은 과정으로 1이 됩니다.
+// 정수들이 담긴 리스트 num_list가 주어질 때, num_list의 모든 원소를 1로 만들기 위해서
+// 필요한 나누기 연산의 횟수를 return하도록 solution 함수를 완성해주세요.
+
+// 생각
+// 1. while을 활용하여 조건이 참일때까지 반복 처리를 한다.
+// 2. 한번 처리할대마다 카운트를 해준다
+// 3. 마무리하고 카운트한 결과값을 리턴한다.
+
+const solution23 = (arr) => {
+  const result = arr.reduce((acc, flag) => {
+    let currentFlag = flag;
+    let count = 0;
+    while (currentFlag !== 1) {
+      if (currentFlag % 2 === 0) {
+        currentFlag = currentFlag / 2;
+      } else if (currentFlag % 2 === 1) {
+        currentFlag = (currentFlag - 1) / 2;
+      }
+      count += 1;
+    }
+    return acc + count;
+  }, 0);
+  return result;
+};
