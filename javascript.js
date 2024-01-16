@@ -482,3 +482,21 @@ const solution21_2 = (arr, intervals) => {
   const [[a, b], [c, d]] = intervals;
   return [...arr.slice(a, b + 1), ...arr.slice(c, d + 1)];
 };
+
+/////////////// 22. 2의 영역   ///////////////
+
+// 문제
+// 정수 배열 arr가 주어집니다.
+// 배열 안의 2가 모두 포함된 가장 작은 연속된 부분 배열을 return 하는 solution 함수를 완성해 주세요.
+// 단, arr에 2가 없는 경우 [-1]을 return 합니다.
+
+// 생각
+// 2가 포함된 구간을 골라내야한다. (infdexOf, lastIndexOf 메소드)
+// 시작 지점 + 끝지점이 없다면 (1보다 작다면) [-1] 리턴 / 있다면 잘라내기
+
+const solution22 = (arr) => {
+  const startIdx = arr.indexOf(2);
+  const endIdx = arr.lastIndexOf(2);
+
+  return startIdx + endIdx < 1 ? [-1] : arr.slice(startIdx, endIdx + 1);
+};
