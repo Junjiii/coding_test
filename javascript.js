@@ -530,3 +530,32 @@ const solution23 = (arr) => {
   }, 0);
   return result;
 };
+
+/////////////// 24. n 번째 원소부터   ///////////////
+
+// 문제
+// 정수 리스트 num_list와 정수 n이 주어질 때,
+// n 번째 원소부터 마지막 원소까지의 모든 원소를 담은 리스트를 return하도록 solution 함수를 완성해주세요.
+
+// 생각
+// slice() 메소드를 사용하여 잘라낸다.
+
+const solution24 = (num_list, n) => {
+  return num_list.slice(n - 1);
+};
+
+/////////////// 25. 글자 지우기   ///////////////
+
+// 문제
+// 문자열 my_string과 정수 배열 indices가 주어질 때,
+// my_string에서 indices의 원소에 해당하는 인덱스의 글자를
+// 지우고 이어 붙인 문자열을 return 하는 solution 함수를 작성해 주세요.
+
+// 생각
+// 1. 다루기 쉽게 배열화 한다. (전개연산자 )
+// 2. 조건에 맞는 요소만 골라낸다. (filter())
+// 3. 문자열로 합쳐서 리턴한다.
+
+const solution25 = (my_string, indices) => {
+  return [...my_string].filter((_, i) => !indices.includes(i)).join("");
+};
