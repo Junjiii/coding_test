@@ -530,3 +530,16 @@ const solution23 = (arr) => {
   }, 0);
   return result;
 };
+
+/////////////// 24. n 번째 원소부터   ///////////////
+
+// 문제
+// 정수 리스트 num_list와 정수 n이 주어질 때,
+// n 번째 원소부터 마지막 원소까지의 모든 원소를 담은 리스트를 return하도록 solution 함수를 완성해주세요.
+
+// 생각
+// slice() 메소드를 사용하여 잘라낸다.
+
+const solution24 = (num_list, n) => {
+  return num_list.slice(n - 1);
+};
