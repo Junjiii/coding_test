@@ -559,3 +559,36 @@ const solution24 = (num_list, n) => {
 const solution25 = (my_string, indices) => {
   return [...my_string].filter((_, i) => !indices.includes(i)).join("");
 };
+
+/////////////// 26. 왼쪽 오른쪽  ///////////////
+
+// 문제
+// 문자열 리스트 str_list에는 "u", "d", "l", "r" 네 개의 문자열이 여러 개 저장되어 있습니다.
+// str_list에서 "l"과 "r" 중 먼저 나오는 문자열이 "l"이라면 해당 문자열을 기준으로 왼쪽에 있는 문자열들을 순서대로 담은 리스트를,
+// 먼저 나오는 문자열이 "r"이라면 해당 문자열을 기준으로 오른쪽에 있는 문자열들을 순서대로 담은 리스트를 return하도록 solution 함수를 완성해주세요.
+// "l"이나 "r"이 없다면 빈 리스트를 return합니다.
+
+// 생각
+// 1. 포함하고 있는 인덱스를 찾아낸다 (findIndex())
+// 2. index의 값에 따라 배열을 잘라낸다.
+
+const solution26 = (str_list) => {
+  const index = str_list.findIndex((item) => item === "l" || item === "r");
+  if (index === -1) {
+    return [];
+  } else if (str_list[index] === "l") {
+    return str_list.slice(0, index);
+  } else {
+    return str_list.slice(index + 1);
+  }
+};
+
+/////////////// 27. flag에 따라 다른 값 반환하기  ///////////////
+
+// 문제
+// 두 정수 a, b와 boolean 변수 flag가 매개변수로 주어질 때,
+// flag가 true면 a + b를 false면 a - b를 return 하는 solution 함수를 작성해 주세요.
+
+const solution27 = (a, b, flag) => {
+  return flag === true ? a + b : a - b;
+};
