@@ -592,3 +592,52 @@ const solution26 = (str_list) => {
 const solution27 = (a, b, flag) => {
   return flag === true ? a + b : a - b;
 };
+
+/////////////// 28. 홀수 vs 짝수   ///////////////
+
+// 문제
+// 정수 리스트 num_list가 주어집니다. 가장 첫 번째 원소를 1번 원소라고 할 때,
+// 홀수 번째 원소들의 합과 짝수 번째 원소들의 합 중 큰 값을 return 하도록 solution 함수를 완성해주세요.
+// 두 값이 같을 경우 그 값을 return합니다.
+
+// 생각
+// 1. Index 가 홀수 / 짝수인 것을 골라낸다. (filter())
+// 2. 값들을 합친다. (reduce())
+// 3. 상항연산자를 사용해 결과갑을 리턴한다.
+
+const solution28_1 = (num_list) => {
+  const oddNum = num_list
+    .filter((_, i) => i % 2 !== 0)
+    .reduce((acc, flag) => (acc += flag), 0);
+  const evenNum = num_list
+    .filter((_, i) => i % 2 === 0)
+    .reduce((acc, flag) => (acc += flag), 0);
+  return oddNum >= evenNum ? oddNum : evenNum;
+};
+
+////// 다른 사람 풀이
+
+const solution28_2 = (num_list) => {
+  let even = 0;
+  let odd = 0;
+
+  num_list.map((v, idx) => {
+    !(idx % 2) ? (even += v) : (odd += v);
+  });
+
+  return odd > even ? odd : even;
+};
+
+/////////////// 29. 5명씩   ///////////////
+
+// 문제
+// 최대 5명씩 탑승가능한 놀이기구를 타기 위해 줄을 서있는 사람들의 이름이 담긴 문자열 리스트 names가 주어질 때,
+// 앞에서 부터 5명씩 묶은 그룹의 가장 앞에 서있는 사람들의 이름을 담은 리스트를 return하도록 solution 함수를 완성해주세요.
+// 마지막 그룹이 5명이 되지 않더라도 가장 앞에 있는 사람의 이름을 포함합니다.
+
+// 생각
+// 1. 5영씩 새 배열을 잘라내어 배열로 만든다.
+// 2. 잘라낸 배열 중 가장 첫번째 사람을 찾아낸다.
+// 3. 그렇다명 결국 결과값의 인덱스 번호는 5의 배수이므로 나머지 값이 0 인 것을 찾아낸다.
+
+const solution29 = (names) => names.filter((v, idx) => idx % 5 === 0);
