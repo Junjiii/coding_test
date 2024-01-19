@@ -592,3 +592,25 @@ const solution26 = (str_list) => {
 const solution27 = (a, b, flag) => {
   return flag === true ? a + b : a - b;
 };
+
+/////////////// 28. 홀수 vs 짝수   ///////////////
+
+// 문제
+// 정수 리스트 num_list가 주어집니다. 가장 첫 번째 원소를 1번 원소라고 할 때,
+// 홀수 번째 원소들의 합과 짝수 번째 원소들의 합 중 큰 값을 return 하도록 solution 함수를 완성해주세요.
+// 두 값이 같을 경우 그 값을 return합니다.
+
+// 생각
+// 1. Index 가 홀수 / 짝수인 것을 골라낸다. (filter())
+// 2. 값들을 합친다. (reduce())
+// 3. 상항연산자를 사용해 결과갑을 리턴한다.
+
+const solution28 = (num_list) => {
+  const oddNum = num_list
+    .filter((_, i) => i % 2 !== 0)
+    .reduce((acc, flag) => (acc += flag), 0);
+  const evenNum = num_list
+    .filter((_, i) => i % 2 === 0)
+    .reduce((acc, flag) => (acc += flag), 0);
+  return oddNum >= evenNum ? oddNum : evenNum;
+};
