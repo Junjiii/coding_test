@@ -641,3 +641,32 @@ const solution28_2 = (num_list) => {
 // 3. 그렇다명 결국 결과값의 인덱스 번호는 5의 배수이므로 나머지 값이 0 인 것을 찾아낸다.
 
 const solution29 = (names) => names.filter((v, idx) => idx % 5 === 0);
+
+/////////////// 30. 할 일 목록  ///////////////
+
+// 문제
+// 오늘 해야 할 일이 담긴 문자열 배열 todo_list와 각각의 일을 지금 마쳤는지를 나타내는 boolean 배열 finished가 매개변수로 주어질 때,
+// todo_list에서 아직 마치지 못한 일들을 순서대로 담은 문자열 배열을 return 하는 solution 함수를 작성해 주세요.
+
+// 생각
+// 1. todo_list 와 finished 의 길이는 같다 => 조건의 맞는 finished[i] 는 길이가 같기 떄문에 todo_list 의 index 와 동일하다.
+// 2. filter()  를 사용해서 리턴한다.
+
+const solution30 = (todo_list, finished) => {
+  return todo_list.filter((e, i) => !finished[i]);
+};
+
+/////////////// 31. 원하는 문자열 찾기 ///////////////
+
+// 문제
+// 알파벳으로 이루어진 문자열 myString과 pat이 주어집니다.
+// myString의 연속된 부분 문자열 중 pat이 존재하면 1을 그렇지 않으면 0을 return 하는 solution 함수를 완성해 주세요.
+// 단, 알파벳 대문자와 소문자는 구분하지 않습니다.
+
+// 생각
+// 1. 비교연산자 ==  로 비교하기엔 엄격하지 못해 전부 소문자형으로 변환 (toLowerCase())
+// 2. 포함 여부를 확인한다. includes()
+
+const solution31 = (myString, pat) => {
+  return Number(myString.toLowerCase().includes(pat.toLowerCase()));
+};
