@@ -668,5 +668,5 @@ const solution30 = (todo_list, finished) => {
 // 2. 포함 여부를 확인한다. includes()
 
 const solution31 = (myString, pat) => {
-  return Number(myString.toLowerCase().includes(pat.toLowerCase()));
+  return +myString.toLowerCase().includes(pat.toLowerCase());
 };
