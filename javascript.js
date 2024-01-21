@@ -688,3 +688,14 @@ const solution32 = (numbers, n) => {
 
   return result;
 };
+
+/////// 다른 사람 풀이
+
+function solution32(numbers, n) {
+  var answer = 0;
+  let i = 0;
+  while (answer <= n) {
+    answer += numbers[i++];
+  }
+  return answer;
+}
