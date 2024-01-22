@@ -748,3 +748,13 @@ const solution34 = (myString) => {
     })
     .join("");
 };
+
+//// 다른 사람 풀이
+
+const solution34_1 = (s) => s.toLowerCase().replaceAll("a", "A");
+
+const solution34_2 = (myString) => {
+  return [...myString]
+    .map((str) => (["a", "A"].includes(str) ? "A" : str.toLowerCase()))
+    .join("");
+};
