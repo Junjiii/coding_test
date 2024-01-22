@@ -724,3 +724,50 @@ function solution33(strArr) {
 
   return resultArr;
 }
+
+/////////////// 34. A 강조하기 ///////////////
+
+// 문제
+// 문자열 myString이 주어집니다. myString에서 알파벳 "a"가 등장하면 전부 "A"로 변환하고,
+// "A"가 아닌 모든 대문자 알파벳은 소문자 알파벳으로 변환하여 return 하는 solution 함수를 완성하세요.
+
+// 생각
+// 1. 다루기 쉽게 배열화 한다. (전개 연산자)
+// 2. 배열을 순회한다 (map())
+// 3. 소문자 a 가 맞다면 대문자로 바꾸고 대문자 A는 그냥 둔다 (toUpperCase)
+// 4. 나머지 알파벳은 소문자로 바꾼다. (toLowerCase)
+
+const solution34 = (myString) => {
+  return [...myString]
+    .map((v) => {
+      if (v.toLowerCase() === "a") {
+        return v.toUpperCase();
+      } else {
+        return v.toLowerCase();
+      }
+    })
+    .join("");
+};
+
+//// 다른 사람 풀이
+
+const solution34_1 = (s) => s.toLowerCase().replaceAll("a", "A");
+
+const solution34_2 = (myString) => {
+  return [...myString]
+    .map((str) => (["a", "A"].includes(str) ? "A" : str.toLowerCase()))
+    .join("");
+};
+
+/////////////// 35. 특정한 문자를 대문자로 바꾸기 ///////////////
+
+// 문제
+// 영소문자로 이루어진 문자열 my_string과 영소문자 1글자로 이루어진 문자열 alp가 매개변수로 주어질 때,
+// my_string에서 alp에 해당하는 모든 글자를 대문자로 바꾼 문자열을 return 하는 solution 함수를 작성해 주세요.
+
+// 생각
+// 1. 조건에 맞는 alp 를 대문자로 대체한다. (replaceAll())
+
+const solution35 = (my_string, alp) => {
+  return my_string.replaceAll(alp, alp.toUpperCase());
+};
