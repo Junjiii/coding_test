@@ -783,3 +783,21 @@ const solution35 = (my_string, alp) => {
 // 1. 삼항연산자를 사용해 조건에 맞는 연산식을 배열을 순회하며 적용한다 (map(삼항연산자))
 
 const solution36 = (arr, k) => arr.map((v) => (k % 2 ? v * k : v + k));
+
+/////////////// 37. 특정 문자열로 끝나는 가장 긴 부분 문자열 찾기 ///////////////
+
+// 문제
+// 문자열 myString과 pat가 주어집니다.
+// myString의 부분 문자열중 pat로 끝나는 가장 긴 부분 문자열을 찾아서 return 하는 solution 함수를 완성해 주세요.
+
+// 생각
+// 1. pat의 마지막 스펠링 위치 알아내기
+// 2. 알아낸 마지막 위치가 myString 어디에 위치한지 찾기
+// 3. 위치를 가지고 잘라낸다.
+
+const solution37_1 = (myString, pat) => {
+  const length = [...pat][pat.length - 1];
+  const end = myString.lastIndexOf(length);
+  const result = myString.slice(0, end + 1);
+  return result;
+};
