@@ -801,3 +801,9 @@ const solution37_1 = (myString, pat) => {
   const result = myString.slice(0, end + 1);
   return result;
 };
+
+////// 다른 사람 풀이
+
+const solution37_2 = (str, pat) => str.substring(0, str.lastIndexOf(pat)) + pat;
+
+// 굳이 포함된 위치까지 잘라낼 필요가 없었다.
