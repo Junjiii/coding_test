@@ -838,7 +838,10 @@ const solution38_2 = (arr) => {
 // myString에서 pat이 등장하는 횟수를 return 하는 solution 함수를 완성해 주세요.
 
 // 생각
-// 1.
+// 1. 앞에서 부터 pat 의 길이랑 같이 잘라낸다.
+// 2. 잘라낸 것이 pat 이랑 같다면 count에 1을 더한다.
+// 3. pat 보다 길이가 작은 부분은 검사할 필요가 없기 떄문에 반복문의 i는 myString.length - pat.length 까지만 하게 만든다.
+
 const solution39 = (myString, pat) => {
   let count = 0;
   for (let i = 0; i <= myString.length - pat.length; i++) {
