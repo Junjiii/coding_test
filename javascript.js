@@ -865,3 +865,9 @@ const solution39 = (myString, pat) => {
 const solution40 = (my_string) => {
   return my_string.split(" ").filter((v) => v);
 };
+
+////// 다른 사람 풀이
+
+const solution40_1 = (my_string) => {
+  return my_string.trim().split(/ +/);
+};
