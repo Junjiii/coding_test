@@ -924,3 +924,16 @@ const solution43 = (binomial) => {
       return +a * +b;
   }
 };
+
+//////// 다른 사람 풀이
+
+const ops = {
+  "+": (a, b) => a + b,
+  "-": (a, b) => a - b,
+  "*": (a, b) => a * b,
+};
+
+function solution43_1(binomial) {
+  const [a, op, b] = binomial.split(" ");
+  return ops[op](+a, +b);
+}
