@@ -911,11 +911,10 @@ const solution42 = (myString) => {
 
 // 생각
 // 1. 공백을 기준으로 쪼개준다. (split)
-// 2. 값이 있는것만 걸러낸다. (filter(Boolean))
-// 3. "+","-","*" 떄마다 각각 연산을 다르게 적용한다. (switch case )
+// 2. "+","-","*" 떄마다 각각 연산을 다르게 적용한다. (switch case )
 
 const solution43 = (binomial) => {
-  const [a, op, b] = binomial.split(" ").filter(Boolean);
+  const [a, op, b] = binomial.split(" ");
   switch (op) {
     case "+":
       return +a + +b;
