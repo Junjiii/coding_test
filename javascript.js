@@ -902,7 +902,7 @@ const solution42 = (myString) => {
   return myString.split("x").filter(Boolean).sort();
 };
 
-/////////////// 42. 문자열 잘라서 정렬하기 //////////////
+/////////////// 43. 문자열 잘라서 정렬하기 //////////////
 
 // 문제
 // 문자열 binomial이 매개변수로 주어집니다.
@@ -937,3 +937,22 @@ function solution43_1(binomial) {
   const [a, op, b] = binomial.split(" ");
   return ops[op](+a, +b);
 }
+
+////////////// 44. 문자열 바꿔서 찾기 //////////////
+
+// 문제
+// 문자 "A"와 "B"로 이루어진 문자열 myString과 pat가 주어집니다.
+// myString의 "A"를 "B"로, "B"를 "A"로 바꾼 문자열의 연속하는 부분 문자열 중
+// pat이 있으면 1을 아니면 0을 return 하는 solution 함수를 완성하세요.
+
+// 생각
+// 1. 배열로 쪼갠다 (전개연산자)
+// 2. 배열을 순회하여 "A" 는 "B" / "B" 는 "A" 로 바꿔준다.
+// 3. 합쳐서 pat 이 포함되어있는지 확인한다. (join / includes)
+
+const solution44 = (myString, pat) => {
+  return +[...myString]
+    .map((v) => (v === "A" ? (v = "B") : (v = "A")))
+    .join("")
+    .includes(pat);
+};
