@@ -1019,3 +1019,8 @@ const solution47 = (arr, n) => {
 };
 
 ////////// 다른 사람 풀이
+
+const solution47_1 = (arr, n) =>
+  arr.map((num, idx) => (arr.length % 2 !== idx % 2 ? num + n : num));
+
+// 길이와 인덱스의 홀수 짝수 여부를 이렇게 응용했다.
