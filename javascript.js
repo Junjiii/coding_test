@@ -995,3 +995,27 @@ const solution46 = (myStr) => {
   const result = myStr.split(/[a|b|c]/g).filter((a) => a);
   return result.length ? result : ["EMPTY"];
 };
+
+////////////// 47. 배열의 길이에 따라 다른 연산하기 //////////////
+
+// 문제
+// 정수 배열 arr과 정수 n이 매개변수로 주어집니다.
+// arr의 길이가 홀수라면 arr의 모든 짝수 인덱스 위치에 n을 더한 배열을,
+//  arr의 길이가 짝수라면 arr의 모든 홀수 인덱스 위치에 n을 더한 배열을 return 하는 solution 함수를 작성해 주세요.
+
+// 생각
+// 1. 배열을 순회한다.
+// 2. arr 의 길이가 짝수일떈 홀수 인덱스에 n을 더한다.
+// 3. arr 의 길이가 홀수라면 짝수 인덱스에 n을 더한다.
+
+const solution47 = (arr, n) => {
+  return arr.map((v, i) =>
+    arr.length % 2 === 0 && i % 2 !== 0
+      ? (v += n)
+      : arr.length % 2 !== 0 && i % 2 === 0
+      ? (v += n)
+      : v
+  );
+};
+
+////////// 다른 사람 풀이
