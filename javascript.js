@@ -1024,3 +1024,15 @@ const solution47_1 = (arr, n) =>
   arr.map((num, idx) => (arr.length % 2 !== idx % 2 ? num + n : num));
 
 // 길이와 인덱스의 홀수 짝수 여부를 이렇게 응용했다.
+
+////////////// 48. 뒤에서 5등까지 //////////////
+
+// 문제
+// 정수로 이루어진 리스트 num_list가 주어집니다.
+// num_list에서 가장 작은 5개의 수를 오름차순으로 담은 리스트를 return하도록 solution 함수를 완성해주세요.
+
+// 생각
+// 1. 먼저 숫자 오름차순으로 정력한다.( sort())
+// 2. 앞에서부터 5개만 리턴한다. (slice())
+
+const solution48 = (num_list) => num_list.sort((a, b) => a - b).slice(0, 5);
