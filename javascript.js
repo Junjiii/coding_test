@@ -1064,3 +1064,15 @@ const solution49 = (arr, flag) => {
   }
   return X;
 };
+
+//////// 다른 사람 풀이
+
+const solution49_1 = (arr, flag) => {
+  return arr.reduce(
+    (prev, num, i) =>
+      flag[i]
+        ? [...prev, ...new Array(num * 2).fill(num)]
+        : prev.slice(0, -num),
+    []
+  );
+};
