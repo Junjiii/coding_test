@@ -1089,3 +1089,15 @@ const solution50 = (arr) => {
   const totalLength = 2 ** Math.ceil(Math.log2(length));
   return [...arr, ...new Array(totalLength - length).fill(0)];
 };
+
+////////////// 51. 뒤에서 5등 위로 //////////////
+
+// 문제
+// 정수로 이루어진 리스트 num_list가 주어집니다.
+// num_list에서 가장 작은 5개의 수를 제외한 수들을 오름차순으로 담은 리스트를 return하도록 solution 함수를 완성해주세요.
+
+// 생각
+// 1. 오름차순으로 정렬한다. (sort)
+// 2. 인덱스 5번부터 출력한다. (slice)
+
+const solution51 = (num_list) => num_list.sort((a, b) => a - b).slice(5);
