@@ -1102,7 +1102,7 @@ const solution50 = (arr) => {
 
 const solution51 = (num_list) => num_list.sort((a, b) => a - b).slice(5);
 
-////////////// 52. 배열 만들기 6//////////////
+////////////// 52. 배열 만들기 6 //////////////
 
 // 문제
 // 0과 1로만 이루어진 정수 배열 arr가 주어집니다. arr를 이용해 새로운 배열 stk을 만드려고 합니다.
@@ -1129,4 +1129,34 @@ const solution52 = (arr) => {
     return stk;
   }, []);
   return !result.length ? [-1] : result;
+};
+
+////////////// 53. 문자열 묶기 //////////////
+
+// 문제
+// 문자열 배열 strArr이 주어집니다. strArr의 원소들을 길이가 같은 문자열들끼리 그룹으로 묶었을 때
+// 가장 개수가 많은 그룹의 크기를 return 하는 solution 함수를 완성해 주세요.
+
+// 풀이 1
+const solution53 = (strArr) => {
+  const dict = {};
+
+  strArr.forEach((item) => {
+    const len = item.length;
+    dict[len] = dict[len] ?? [];
+    dict[len].push(item);
+  });
+
+  const values = Object.values(dict).map((a) => a.length);
+  return Math.max(...values);
+};
+
+// 풀이2
+
+const solution53_1 = (strArr) => {
+  const counter = new Map();
+  for (const str of strArr) {
+    counter.set(str.length, (counter.get(str.length) || 0) + 1);
+  }
+  return Math.max(...counter.values());
 };
