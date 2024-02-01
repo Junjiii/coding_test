@@ -1101,3 +1101,32 @@ const solution50 = (arr) => {
 // 2. 인덱스 5번부터 출력한다. (slice)
 
 const solution51 = (num_list) => num_list.sort((a, b) => a - b).slice(5);
+
+////////////// 52. 배열 만들기 6//////////////
+
+// 문제
+// 0과 1로만 이루어진 정수 배열 arr가 주어집니다. arr를 이용해 새로운 배열 stk을 만드려고 합니다.
+// i의 초기값을 0으로 설정하고 i가 arr의 길이보다 작으면 다음을 반복합니다.
+
+// 만약 stk이 빈 배열이라면 arr[i]를 stk에 추가하고 i에 1을 더합니다.
+// stk에 원소가 있고, stk의 마지막 원소가 arr[i]와 같으면 stk의 마지막 원소를 stk에서 제거하고 i에 1을 더합니다.
+// stk에 원소가 있는데 stk의 마지막 원소가 arr[i]와 다르면 stk의 맨 마지막에 arr[i]를 추가하고 i에 1을 더합니다.
+
+// 위 작업을 마친 후 만들어진 stk을 return 하는 solution 함수를 완성해 주세요.
+// 단, 만약 빈 배열을 return 해야한다면 [-1]을 return 합니다.
+
+// 생각
+// 1. 빈 배열일때 / stk[stk.length-1] 가 arr[i]과 다를때 stk 에 arr[i] 를 추가한다.
+// 2. 빈 배열일때 stk[stk.length-1] 를 구하면 undefined 가 뜬다.
+// 3. undefined 와 arr[i] 는 같지 않으므로 false 가 뜬다.
+// 4. 결국 빈 배열일때도 false /  stk[stk.length-1] 가 arr[i]과 다를때 도 false 이기 떄문에 같다.
+// 5. stk[stk.length-1] 가 arr[i]과 같다면 arr.pop() 으로 맨마지막 요소를 삭제한다.
+// 6. 결과값 stk 가 빈배열이라면 [-1] 아니라면 stk 를 리턴한다.
+
+const solution52 = (arr) => {
+  const result = arr.reduce((stk, v) => {
+    v !== stk[stk.length - 1] ? stk.push(v) : stk.pop();
+    return stk;
+  }, []);
+  return !result.length ? [-1] : result;
+};
