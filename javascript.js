@@ -1220,3 +1220,7 @@ const solution56 = (arr, delete_list) => {
   }
   return arr;
 };
+
+/////// 다른 사람 풀이
+
+const solution56_1 = (arr, dels) => arr.filter((el) => !dels.includes(el));
