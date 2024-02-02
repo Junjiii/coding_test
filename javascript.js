@@ -1160,3 +1160,15 @@ const solution53_1 = (strArr) => {
   }
   return Math.max(...counter.values());
 };
+
+////////////// 54. 문자열 정수의 합 //////////////
+
+// 문제
+// 한 자리 정수로 이루어진 문자열 num_str이 주어질 때, 각 자리수의 합을 return하도록 solution 함수를 완성해주세요.
+
+// 생각
+// 1. num_list 를 배열화한다. ( [...])
+// 2. 문자열을 숫자형으로 변환한다. (+)
+// 3. 배열을 순회하며 더해준다. (reduce)
+
+const solution54 = (num_str) => [...num_str].reduce((a, v) => (a += +v), 0);
