@@ -1192,3 +1192,8 @@ const solution55 = (n_str) => {
   }
   return result.join("");
 };
+
+//////// 다른 사람 풀이
+const solution55_1 = (n_str) => String(+n_str);
+
+// 어차피 맨 왼쪽의 0 은 숫자로 표현하지 않게 때문에 숫자형으로 변환하면 알아서 제거된다.
