@@ -1197,3 +1197,26 @@ const solution55 = (n_str) => {
 const solution55_1 = (n_str) => String(+n_str);
 
 // 어차피 맨 왼쪽의 0 은 숫자로 표현하지 않게 때문에 숫자형으로 변환하면 알아서 제거된다.
+
+////////////// 56. 배열의 원소 삭제하기 //////////////
+
+// 문제
+// 정수 배열 arr과 delete_list가 있습니다.
+// arr의 원소 중 delete_list의 원소를 모두 삭제하고 남은 원소들은 기존의 arr에 있던 순서를 유지한 배열을
+// return 하는 solution 함수를 작성해 주세요.
+
+// 생각
+// 1. arr을 뒤에서부터 순회한다.
+// 2. arr[i] 가 delete_list[j]와 같으면 삭제한다.
+// 2. 결과를 리턴한다.
+
+const solution56 = (arr, delete_list) => {
+  for (i = arr.length - 1; i >= 0; i--) {
+    for (j = 0; j < delete_list.length; j++) {
+      if (arr[i] === delete_list[j]) {
+        arr.splice(i, 1);
+      }
+    }
+  }
+  return arr;
+};
