@@ -1172,3 +1172,23 @@ const solution53_1 = (strArr) => {
 // 3. 배열을 순회하며 더해준다. (reduce)
 
 const solution54 = (num_str) => [...num_str].reduce((a, v) => (a += +v), 0);
+
+////////////// 55. 0 떼기 //////////////
+
+// 문제
+// 정수로 이루어진 문자열 n_str이 주어질 때,
+// n_str의 가장 왼쪽에 처음으로 등장하는 0들을 뗀 문자열을 return하도록 solution 함수를 완성해주세요.
+
+// 생각
+// 1. n_str 을 배열화한다.
+// 2. while 문을 사용해 왼쪽에서부터 "0" 이면 삭제하고 아니면 반복문 종료한다.
+// 3. 합쳐서 리턴한다. (join)
+
+const solution55 = (n_str) => {
+  let i = 0;
+  const result = [...n_str];
+  while (i < result.length && result[i] === "0") {
+    result.shift();
+  }
+  return result.join("");
+};
