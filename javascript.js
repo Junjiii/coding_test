@@ -1300,3 +1300,19 @@ const solution60_1 = (a, b) => {
   else if (a % 2 === 0 && b % 2 === 0) return method[3](a, b);
   else return method[2](a, b);
 };
+
+const method60_2 = {
+  1: (a, b) => a ** 2 + b ** 2,
+  2: (a, b) => 2 * (a + b),
+  3: (a, b) => Math.abs(a - b),
+};
+
+const solution60_2 = (a, b) => {
+  return a % 2 && b % 2
+    ? method[1](a, b)
+    : a % 2 || b % 2
+    ? method[2](a, b)
+    : method[3](a, b);
+};
+
+//  %2 를 통한 나머지 1 , 0 을 구하는데 삼항연산자 혹은 if() 조건문으로 활용할떄 1,0 은 true , false 로 인식하게 된다.
