@@ -1268,3 +1268,8 @@ const solution59 = (str_list, ex) => {
     }, [])
     .join("");
 };
+
+/////// 다른 사람 풀이
+
+const solutin59_1 = (str_list, ex) =>
+  str_list.filter((v) => !v.includes(ex)).join("");
