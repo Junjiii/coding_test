@@ -1250,3 +1250,21 @@ const solution57 = (a, b) => `${BigInt(a) + BigInt(b)}`;
 // 2. 숫자형으로 바꾸어 1 또는 0 을 리턴하게 만든다.
 
 const solution58 = (str1, str2) => +str2.includes(str1);
+
+////////////// 58. 부분 문자열 //////////////
+
+// 문제
+// 문자열 리스트 str_list와 제외하려는 문자열 ex가 주어질 때,
+// str_list에서 ex를 포함한 문자열을 제외하고 만든 꼬리 문자열을 return하도록 solution 함수를 완성해주세요.
+
+// 생각
+// str_list 에 ex 포함 여부가 false 인 것들만 합친다. (includes())
+
+const solution59 = (str_list, ex) => {
+  return str_list
+    .reduce((acc, v) => {
+      if (!v.includes(ex)) acc.push(v);
+      return acc;
+    }, [])
+    .join("");
+};
