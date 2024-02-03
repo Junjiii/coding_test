@@ -1251,7 +1251,7 @@ const solution57 = (a, b) => `${BigInt(a) + BigInt(b)}`;
 
 const solution58 = (str1, str2) => +str2.includes(str1);
 
-////////////// 58. 부분 문자열 //////////////
+////////////// 59. 꼬리 문자열 //////////////
 
 // 문제
 // 문자열 리스트 str_list와 제외하려는 문자열 ex가 주어질 때,
@@ -1273,3 +1273,30 @@ const solution59 = (str_list, ex) => {
 
 const solutin59_1 = (str_list, ex) =>
   str_list.filter((v) => !v.includes(ex)).join("");
+
+////////////// 60. 주사위 게임 1 //////////////
+
+// 문제
+// 1부터 6까지 숫자가 적힌 주사위가 두 개 있습니다. 두 주사위를 굴렸을 때 나온 숫자를 각각 a, b라고 했을 때 얻는 점수는 다음과 같습니다.
+
+// a와 b가 모두 홀수라면 a2 + b2 점을 얻습니다.
+// a와 b 중 하나만 홀수라면 2 × (a + b) 점을 얻습니다.
+// a와 b 모두 홀수가 아니라면 |a - b| 점을 얻습니다.
+
+// 두 정수 a와 b가 매개변수로 주어질 때, 얻는 점수를 return 하는 solution 함수를 작성해 주세요.
+
+// 생각
+// 1. 3개의 상황에 맞는 연산을 만든다. (|a-b| 는 절대값을 출력해야한다. )
+// 2. 홀수 짝수를 판단한다.
+
+const method60_1 = {
+  1: (a, b) => a ** 2 + b ** 2,
+  2: (a, b) => 2 * (a + b),
+  3: (a, b) => Math.abs(a - b),
+};
+
+const solution60_1 = (a, b) => {
+  if (a % 2 === 1 && b % 2 === 1) return method[1](a, b);
+  else if (a % 2 === 0 && b % 2 === 0) return method[3](a, b);
+  else return method[2](a, b);
+};
