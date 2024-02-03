@@ -1224,3 +1224,15 @@ const solution56 = (arr, delete_list) => {
 /////// 다른 사람 풀이
 
 const solution56_1 = (arr, dels) => arr.filter((el) => !dels.includes(el));
+
+////////////// 57. 두 수의 합 //////////////
+
+// 문제
+// 0 이상의 두 정수가 문자열 a, b로 주어질 때, a + b의 값을 문자열로 return 하는 solution 함수를 작성해 주세요.
+
+// 생각
+// 1. 숫자형으로 바꾼다. 대신 예시 중 자바스크립트 자체에서 64비트 이상은 정확한 값을 변환하기 한계가 있는 이슈가 있어서
+// Bigint() 를 사용하여 정확한 값으로 바꾼다.
+// 2. 더해준 값을 문자형으로 바꾼다.
+
+const solution57 = (a, b) => `${BigInt(a) + BigInt(b)}`;
