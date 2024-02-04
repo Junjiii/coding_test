@@ -1342,3 +1342,25 @@ const solution61 = (date1, date2) => {
 
 const solution61_1 = (date1, date2) =>
   new Date(date1) < new Date(date2) ? 1 : 0;
+
+////////////// 62.l로 만들기 /////////////
+
+// 문제
+// 알파벳 소문자로 이루어진 문자열 myString이 주어집니다.
+// 알파벳 순서에서 "l"보다 앞서는 모든 문자를 "l"로 바꾼 문자열을 return 하는 solution 함수를 완성해 주세요.
+
+// 생각
+// 1. 배열을 순회하며 l 보다 작을 경우 l로 바꿔준다
+// 2. 바꿔준 배열을 리턴한다.
+
+const solution62 = (myString) => {
+  const arr = [];
+  const result = [...myString].map((v, i) => {
+    if (v < "l") {
+      arr.push("l");
+    } else {
+      arr.push(v);
+    }
+  });
+  return arr.join("");
+};
