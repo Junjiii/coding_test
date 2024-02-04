@@ -1364,3 +1364,6 @@ const solution62 = (myString) => {
   });
   return arr.join("");
 };
+
+///////// 다른 사람 풀이
+const solution62_1 = (myString) => myString.replace(/[a-k]/g, "l");
