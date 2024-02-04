@@ -1337,3 +1337,8 @@ const solution61 = (date1, date2) => {
   if (day1 !== day2) return day1 < day2 ? 1 : 0;
   return 0;
 };
+
+////////// 다른 사람 풀이
+
+const solution61_1 = (date1, date2) =>
+  new Date(date1) < new Date(date2) ? 1 : 0;
