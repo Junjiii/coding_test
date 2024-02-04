@@ -1316,3 +1316,24 @@ const solution60_2 = (a, b) => {
 };
 
 //  %2 를 통한 나머지 1 , 0 을 구하는데 삼항연산자 혹은 if() 조건문으로 활용할떄 1,0 은 true , false 로 인식하게 된다.
+
+////////////// 61. 날짜 비교하기//////////////
+
+// 문제
+// 정수 배열 date1과 date2가 주어집니다.
+// 두 배열은 각각 날짜를 나타내며 [year, month, day] 꼴로 주어집니다.
+// 각 배열에서 year는 연도를, month는 월을, day는 날짜를 나타냅니다.
+// 만약 date1이 date2보다 앞서는 날짜라면 1을, 아니면 0을 return 하는 solution 함수를 완성해 주세요.
+
+// 생각
+// 1. 배열의 요소를 조건에 맞춰 작성한다.
+// 2. 모두 충족하지 못한다면 0을 리턴한다.
+
+const solution61 = (date1, date2) => {
+  let [year1, month1, day1] = date1;
+  let [year2, month2, day2] = date2;
+  if (year1 !== year2) return year1 < year2 ? 1 : 0;
+  if (month1 !== month2) return month1 < month2 ? 1 : 0;
+  if (day1 !== day2) return day1 < day2 ? 1 : 0;
+  return 0;
+};
