@@ -1376,7 +1376,7 @@ const solution62_1 = (myString) => myString.replace(/[a-k]/g, "l");
 
 // 생각
 
-const solution = (n) => {
+const solution63 = (n) => {
   let arr2 = [];
   for (let i = 0; i < n; i++) {
     let arr1 = new Array(n).fill(0);
@@ -1384,4 +1384,16 @@ const solution = (n) => {
     arr2.push(arr1);
   }
   return arr2;
+};
+
+//////// 다른 사람 풀이
+
+const solution63_1 = (n) => {
+  const answer = Array.from(Array(n), () => Array(n).fill(0));
+
+  for (let i = 0; i < n; i++) {
+    answer[i][i] = 1;
+  }
+
+  return answer;
 };
