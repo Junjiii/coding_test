@@ -1446,3 +1446,23 @@ const solution65 = (board, k) => {
   }
   return count;
 };
+
+////////// 다른 사람 풀이
+
+const solution65_1 = (board, k) => {
+  return board.reduce(
+    (total, row, i) =>
+      total + row.reduce((prev, num, j) => (i + j <= k ? prev + num : prev), 0),
+    0
+  );
+};
+
+const solution65_2 = (board, k) => {
+  let answer = 0;
+  for (let x = 0; x < board.length; x++) {
+    for (let y = 0; y < board[0].length; y++) {
+      if (x + y <= k) answer += board[x][y];
+    }
+  }
+  return answer;
+};
