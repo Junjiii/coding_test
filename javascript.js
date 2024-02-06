@@ -1414,3 +1414,10 @@ const solution64 = (arr) => {
   }
   return count.includes(0) ? 0 : 1;
 };
+
+////////// 다른 사람 풀이
+const solution64_1 = (arr) => {
+  return arr.every((r, i) => r.every((_, j) => arr[i][j] === arr[j][i]))
+    ? 1
+    : 0;
+};
