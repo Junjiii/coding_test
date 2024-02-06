@@ -1477,3 +1477,16 @@ const solution65_2 = (board, k) => {
 // 2. 그 후 몇마리인지 곱해준다.
 
 const solution66 = (n, t) => 2 ** t * n;
+
+/////// 다른 사람 풀이
+const solution66_1 = (n, t) => {
+  return n << t;
+};
+
+// 비트연산자 활용
+
+const solution66_2 = (n, t) => {
+  return n * Math.pow(2, t);
+};
+
+// pow() 메소드 사용
