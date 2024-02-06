@@ -1421,3 +1421,28 @@ const solution64_1 = (arr) => {
     ? 1
     : 0;
 };
+
+////////////// 65. 이차원 배열 대각선 순회하기 /////////////
+
+// 문제
+// 2차원 정수 배열 board와 정수 k가 주어집니다.
+// i + j <= k를 만족하는 모든 (i, j)에 대한 board[i][j]의 합을 return 하는 solution 함수를 완성해 주세요.
+
+const solution65 = (board, k) => {
+  let count = 0;
+  const result = board.map((v, i) => {
+    return v
+      .map((bv, j) => {
+        if (i + j <= k) {
+          return board[i][j];
+        }
+      })
+      .filter((v) => v);
+  });
+  for (i = 0; i < result.length; i++) {
+    for (j = 0; j < result[i].length; j++) {
+      count += result[i][j];
+    }
+  }
+  return count;
+};
