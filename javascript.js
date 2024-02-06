@@ -1466,3 +1466,49 @@ const solution65_2 = (board, k) => {
   }
   return answer;
 };
+
+////////////// 66. 세균 증식 /////////////
+
+// 문제
+// 어떤 세균은 1시간에 두배만큼 증식한다고 합니다.
+// 처음 세균의 마리수 n과 경과한 시간 t가 매개변수로 주어질 때 t시간 후 세균의 수를 return하도록 solution 함수를 완성해주세요.
+
+// 1. t 번의 횟수만큼 2번 곱해준다.
+// 2. 그 후 몇마리인지 곱해준다.
+
+const solution66 = (n, t) => 2 ** t * n;
+
+/////// 다른 사람 풀이
+const solution66_1 = (n, t) => {
+  return n << t;
+};
+
+// 비트연산자 활용
+
+const solution66_2 = (n, t) => {
+  return n * Math.pow(2, t);
+};
+
+// pow() 메소드 사용
+
+////////////// 67. 제곱수 판별하기 /////////////
+
+// 문제
+// 어떤 자연수를 제곱했을 때 나오는 정수를 제곱수라고 합니다.
+// 정수 n이 매개변수로 주어질 때, n이 제곱수라면 1을 아니라면 2를 return하도록 solution 함수를 완성해주세요.
+
+const solution67 = (n) => (Math.sqrt(n) % 1 === 0 ? 1 : 2);
+
+/////// 다른 사람 풀이
+const solution67_1 = (n) => {
+  return Number.isInteger(Math.sqrt(n)) ? 1 : 2;
+};
+
+const solution67_2 = (n) => {
+  for (let i = 0; i < n / 2; i++) {
+    if (i * i == n) {
+      return 1;
+    }
+  }
+  return 2;
+};
