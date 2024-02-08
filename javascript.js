@@ -1525,3 +1525,10 @@ const solution68 = (str1, str2) => (str1.includes(str2) ? 1 : 2);
 const solution68_1 = (str1, str2) => {
   return str1.split(str2).length > 1 ? 1 : 2;
 };
+
+////////////// 69. 자릿 수 더하기 /////////////
+
+// 문제
+// 정수 n이 매개변수로 주어질 때 n의 각 자리 숫자의 합을 return하도록 solution 함수를 완성해주세요
+
+const solution69 = (n) => (n + "").split("").reduce((acc, v) => (acc += +v), 0);
