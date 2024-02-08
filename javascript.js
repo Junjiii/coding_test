@@ -1531,4 +1531,8 @@ const solution68_1 = (str1, str2) => {
 // 문제
 // 정수 n이 매개변수로 주어질 때 n의 각 자리 숫자의 합을 return하도록 solution 함수를 완성해주세요
 
-const solution69 = (n) => (n + "").split("").reduce((acc, v) => (acc += +v), 0);
+const solution69 = (n) =>
+  n
+    .toString()
+    .split("")
+    .reduce((acc, v) => (acc += +v), 0);
