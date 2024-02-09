@@ -1582,3 +1582,15 @@ const solution72_1 = (s1, s2) => {
   });
   return count;
 };
+
+const solution72_2 = (s1, s2) => {
+  const intersection = s1.filter((x) => s2.includes(x));
+  return intersection.length;
+};
+
+const solution72_3 = (s1, s2) => {
+  const concat = [...s1, ...s2];
+  const setConcat = Array.from(new Set(concat));
+
+  return concat.length - setConcat.length;
+};
