@@ -1554,3 +1554,15 @@ const solution71 = (num, k) => {
   const result = num.toString().split("").map(Number).indexOf(k);
   return result >= 0 ? result + 1 : -1;
 };
+
+////// 다른 사람 풀이
+
+const solution71_1 = (num, k) => {
+  return (
+    num
+      .toString()
+      .split("")
+      .map((el) => Number(el))
+      .indexOf(k) + 1 || -1
+  );
+};
