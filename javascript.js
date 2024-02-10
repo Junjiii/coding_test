@@ -1608,3 +1608,9 @@ const solution73 = (my_str, n) => {
   }
   return result;
 };
+
+////// 다른 사람 풀이
+
+const solution73_1 = (my_str, n) => {
+  return my_str.match(new RegExp(`.{1,${n}}`, "g"));
+};
