@@ -1632,3 +1632,8 @@ const solution74 = (my_string) => [...my_string.toLowerCase()].sort().join("");
 const solution75 = (array) => {
   return [...array.join("")].filter((v) => v === "7").length;
 };
+
+////// 다른 사람 풀이
+const solution75_1 = (array) => {
+  return array.join("").split("7").length - 1;
+};
