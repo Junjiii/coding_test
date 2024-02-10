@@ -1583,7 +1583,6 @@ const solution72_1 = (s1, s2) => {
   return count;
 };
 
-
 const solution72_2 = (s1, s2) => {
   const intersection = s1.filter((x) => s2.includes(x));
   return intersection.length;
@@ -1596,3 +1595,16 @@ const solution72_3 = (s1, s2) => {
   return concat.length - setConcat.length;
 };
 
+/////////////// 73. 잘라서 배열로 저장하기  /////////////
+
+// 문제
+// 문자열 my_str과 n이 매개변수로 주어질 때,
+// my_str을 길이 n씩 잘라서 저장한 배열을 return하도록 solution 함수를 완성해주세요.
+
+const solution73 = (my_str, n) => {
+  const result = [];
+  for (i = 0; i < my_str.length; i += n) {
+    result.push(my_str.slice(i, i + n));
+  }
+  return result;
+};
