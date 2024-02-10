@@ -1622,3 +1622,13 @@ const solution73_1 = (my_str, n) => {
 // my_string을 모두 소문자로 바꾸고 알파벳 순서대로 정렬한 문자열을 return 하도록 solution 함수를 완성해보세요.
 
 const solution74 = (my_string) => [...my_string.toLowerCase()].sort().join("");
+
+/////////////// 75. 7의 갯수 /////////////
+
+// 문제
+// 머쓱이는 행운의 숫자 7을 가장 좋아합니다. 정수 배열 array가 매개변수로 주어질 때,
+// 7이 총 몇 개 있는지 return 하도록 solution 함수를 완성해보세요.
+
+const solution75 = (array) => {
+  return [...array.join("")].filter((v) => v === "7").length;
+};
