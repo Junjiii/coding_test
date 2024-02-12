@@ -1637,3 +1637,22 @@ const solution75 = (array) => {
 const solution75_1 = (array) => {
   return array.join("").split("7").length - 1;
 };
+
+/////////////// 76. 가장 큰 수 찾기 /////////////
+
+// 문제
+// 정수 배열 array가 매개변수로 주어질 때,
+// 가장 큰 수와 그 수의 인덱스를 담은 배열을 return 하도록 solution 함수를 완성해보세요.
+
+const solution76 = (array) => {
+  let result = [];
+  array.reduce((acc, v, i) => {
+    if (acc < v) {
+      acc = v;
+      result = [];
+      result.push(v, i);
+    }
+    return acc;
+  });
+  return result;
+};
