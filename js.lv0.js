@@ -1656,3 +1656,10 @@ const solution76 = (array) => {
   });
   return result;
 };
+
+/////// 다른 사람 풀이
+
+const solution76_1 = (array) => {
+  let max = Math.max(...array);
+  return [max, array.indexOf(max)];
+};
