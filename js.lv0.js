@@ -1672,3 +1672,15 @@ const solution76_1 = (array) => {
 // 편지를 가로로만 적을 때, 축하 문구 message를 적기 위해 필요한 편지지의 최소 가로길이를 return 하도록 solution 함수를 완성해주세요.
 
 const solution77 = (message) => message.length * 2;
+
+/////////////// 78. 약수 구하기 /////////////
+
+// 문제
+// 정수 n이 매개변수로 주어질 때, n의 약수를 오름차순으로 담은 배열을 return하도록 solution 함수를 완성해주세요.
+const solution78 = (n) => {
+  const result = [];
+  for (i = 1; i <= n; i++) {
+    if (n % i === 0) result.push(i);
+  }
+  return result;
+};
