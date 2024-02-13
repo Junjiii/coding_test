@@ -1775,3 +1775,13 @@ const solution82 = (cipher, code) => {
 const solution83 = (order) => {
   return [...order.toString()].filter((v) => /[369]/.test(v)).length;
 };
+
+//////// 다른 사람 풀이
+const solution83_1 = (order) => {
+  var answer = [...order.toString().matchAll(/[3|6|9]/g)].length;
+  return answer;
+};
+
+const solution83_2 = (order) => {
+  return ("" + order).split(/[369]/).length - 1;
+};
