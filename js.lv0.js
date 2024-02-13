@@ -1722,3 +1722,15 @@ const solution79_1 = (s) => {
   for (let c of s) if (s.indexOf(c) === s.lastIndexOf(c)) res.push(c);
   return res.sort().join("");
 };
+
+/////////////// 80. 인덱스 바꾸기 /////////////
+
+// 문제
+// 문자열 my_string과 정수 num1, num2가 매개변수로 주어질 때,
+// my_string에서 인덱스 num1과 인덱스 num2에 해당하는 문자를 바꾼 문자열을 return 하도록 solution 함수를 완성해보세요.
+
+const solution80 = (s, a, b) => {
+  s = [...s];
+  [s[a], s[b]] = [s[b], s[a]];
+  return s.join("");
+};
