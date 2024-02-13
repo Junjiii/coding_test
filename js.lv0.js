@@ -1715,3 +1715,10 @@ const solution79 = (s) => {
 
   return ans.sort().join("");
 };
+
+/////// 다른 사람 풀이
+const solution79_1 = (s) => {
+  let res = [];
+  for (let c of s) if (s.indexOf(c) === s.lastIndexOf(c)) res.push(c);
+  return res.sort().join("");
+};
