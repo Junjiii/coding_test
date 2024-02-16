@@ -1872,3 +1872,19 @@ const solution85_1 = (numbers) => {
 
   return Number(num);
 };
+
+const solution85_2 = (n) =>
+  Number(
+    [
+      "zero",
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine",
+    ].reduce((t, s, i) => t.replaceAll(s, i), n)
+  );
