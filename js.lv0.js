@@ -1925,3 +1925,7 @@ const solution86_1 = (array, n) => {
 
 const solution87 = (my_string) =>
   [...my_string].filter((e, i) => [...my_string].indexOf(e) === i).join("");
+
+/////// 다른 사람 풀이
+
+const solution87_1 = (my_string) => [...new Set([...my_string])].join("");
