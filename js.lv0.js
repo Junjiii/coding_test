@@ -1985,3 +1985,11 @@ const solution90 = (before, after) => {
 
   return afterArr.length ? 0 : 1;
 };
+
+/////// 다른 사람 풀이
+
+const solution90_1 = (before, after) => {
+  return before.split("").sort().join("") === after.split("").sort().join("")
+    ? 1
+    : 0;
+};
