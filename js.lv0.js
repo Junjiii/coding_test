@@ -2044,3 +2044,7 @@ const solution92 = (strlist) => {
 const solution92_1 = (strlist) => {
   return strlist.map((el) => el.length);
 };
+
+const solution92_2 = (strlist) => {
+  return strlist.reduce((a, b) => [...a, b.length], []);
+};
