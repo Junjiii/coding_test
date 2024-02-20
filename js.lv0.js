@@ -2039,3 +2039,8 @@ const solution92 = (strlist) => {
     return acc;
   }, []);
 };
+
+//////// 다른 사람 풀이
+const solution92_1 = (strlist) => {
+  return strlist.map((el) => el.length);
+};
