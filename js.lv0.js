@@ -2026,3 +2026,16 @@ const solution91_1 = (bin1, bin2) => {
   }
   return Number(temp.reverse().join("")).toString();
 };
+
+/////////////// 92. 배열 원소의 길이 /////////////
+
+// 문제
+// 문자열 배열 strlist가 매개변수로 주어집니다.
+// strlist 각 원소의 길이를 담은 배열을 retrun하도록 solution 함수를 완성해주세요.
+
+const solution92 = (strlist) => {
+  return strlist.reduce((acc, v, i) => {
+    acc.push(v.length);
+    return acc;
+  }, []);
+};
