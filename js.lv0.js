@@ -2048,3 +2048,14 @@ const solution92_1 = (strlist) => {
 const solution92_2 = (strlist) => {
   return strlist.reduce((a, b) => [...a, b.length], []);
 };
+
+/////////////// 93. 최댓값 만들기(1) /////////////
+
+// 문제
+// 정수 배열 numbers가 매개변수로 주어집니다.
+// numbers의 원소 중 두 개를 곱해 만들 수 있는 최댓값을 return하도록 solution 함수를 완성해주세요.
+
+const solution93 = (numbers) => {
+  numbers.sort((a, b) => b - a);
+  return numbers[0] * numbers[1];
+};
