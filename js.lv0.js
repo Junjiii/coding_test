@@ -2082,3 +2082,9 @@ const solution94 = (n) => {
 
 const solution95 = (my_string) =>
   [...my_string].filter((v) => !v.match(/[aeiou]/gi)).join("");
+
+/////// 다른 사람 풀이
+
+const solution95_1 = (my_string) => {
+  return my_string.replace(/[aeiou]/g, "");
+};
