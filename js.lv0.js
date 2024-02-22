@@ -2101,3 +2101,12 @@ const solution96 = (my_string) => {
     .map((v) => +v)
     .sort((a, b) => a - b);
 };
+
+/////// 다른 사람 풀이
+
+const solution96_1 = (my_string) => {
+  return my_string
+    .match(/\d/g)
+    .sort((a, b) => a - b)
+    .map((n) => Number(n));
+};
