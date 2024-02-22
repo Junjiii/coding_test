@@ -2088,3 +2088,16 @@ const solution95 = (my_string) =>
 const solution95_1 = (my_string) => {
   return my_string.replace(/[aeiou]/g, "");
 };
+
+/////////////// 96. 문자열 정렬하기 (1) /////////////
+
+// 문제
+// 문자열 my_string이 매개변수로 주어질 때,
+// my_string 안에 있는 숫자만 골라 오름차순 정렬한 리스트를 return 하도록 solution 함수를 작성해보세요.
+
+const solution96 = (my_string) => {
+  return [...my_string]
+    .filter((v) => v.match(/[0-9]/gi))
+    .map((v) => +v)
+    .sort((a, b) => a - b);
+};
