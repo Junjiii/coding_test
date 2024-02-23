@@ -2133,3 +2133,17 @@ const solution97_1 = (my_string) => {
     .reduce((acc, curr) => acc + Number(curr), 0);
   return answer;
 };
+
+/////////////// 98. 배열의 평균값 /////////////
+
+// 문제
+// 정수 배열 numbers가 매개변수로 주어집니다. numbers의 원소의 평균값을 return하도록 solution 함수를 완성해주세요.
+
+const solution98 = (numbers) => {
+  return (
+    numbers.reduce((acc, v) => {
+      acc += v;
+      return acc;
+    }, 0) / numbers.length
+  );
+};
