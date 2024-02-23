@@ -2123,3 +2123,13 @@ const solution97 = (my_string) => {
     return acc;
   }, 0);
 };
+
+////// 다른 사람 풀이
+
+const solution97_1 = (my_string) => {
+  const answer = my_string
+    .replace(/[^0-9]/g, "")
+    .split("")
+    .reduce((acc, curr) => acc + Number(curr), 0);
+  return answer;
+};
