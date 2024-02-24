@@ -2153,6 +2153,7 @@ const solution98 = (numbers) => {
 // 문제
 // 정수 배열 numbers가 매개변수로 주어집니다.
 // numbers의 원소 중 두 개를 곱해 만들 수 있는 최댓값을 return하도록 solution 함수를 완성해주세요.
+
 const solution99 = (numbers) => {
   const numASC = numbers.sort((a, b) => a - b);
   const num1 = numASC[0] * numASC[1];
@@ -2160,4 +2161,14 @@ const solution99 = (numbers) => {
   const num2 = numDESC[0] * numDESC[1];
 
   return num1 > num2 ? num1 : num2;
+};
+
+///////// 다른 사람 풀이
+
+const solution99_1 = (numbers) => {
+  numbers.sort((a, b) => a - b);
+  return Math.max(
+    numbers[0] * numbers[1],
+    numbers[numbers.length - 1] * numbers[numbers.length - 2]
+  );
 };
