@@ -2194,3 +2194,9 @@ const solution100 = (box, n) => {
   const [a, b, c] = box.map((v) => parseInt(v / n));
   return a * b * c;
 };
+
+//////// 다른 사람 풀이
+
+const solution100_1 = (box, n) => {
+  return box.reduce((acc, v) => acc * Math.floor(v / n), 1);
+};
