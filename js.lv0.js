@@ -2172,3 +2172,13 @@ const solution99_1 = (numbers) => {
     numbers[numbers.length - 1] * numbers[numbers.length - 2]
   );
 };
+
+const solution99_2 = (numbers) => {
+  var answer = [];
+  for (let i = 0; i < numbers.length - 1; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      answer.push(numbers[i] * numbers[j]);
+    }
+  }
+  return Math.max(...answer);
+};
