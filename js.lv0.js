@@ -2237,3 +2237,16 @@ const solution102 = (s) => {
   }, 0);
   return result;
 };
+
+//////// 다른 사람 풀이
+
+const solution102_1 = (s) => {
+  const stack = [];
+
+  s.split(" ").forEach((target) => {
+    if (target === "Z") stack.pop();
+    else stack.push(+target);
+  });
+
+  return stack.length ? stack.reduce((pre, cur) => pre + cur) : 0;
+};
