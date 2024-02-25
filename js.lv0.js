@@ -2210,3 +2210,9 @@ const solution100_1 = (box, n) => {
 const solution101 = (my_string) => {
   return my_string.split(/[A-Za-z]+/g).reduce((acc, v) => (acc += +v), 0);
 };
+
+//////// 다른 사람 풀이
+
+const solution101_1 = (my_string) => {
+  return my_string.split(/\D+/).reduce((acc, cur) => acc + Number(cur), 0);
+};
