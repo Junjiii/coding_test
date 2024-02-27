@@ -2334,3 +2334,19 @@ const solution105 = (numbers, direction) => {
   direction === "right" ? right() : left();
   return numbers;
 };
+
+/////// 다른 사람 풀이
+
+const solution105_1 = (numbers, direction) => {
+  var answer = [];
+
+  if ("right" == direction) {
+    numbers.unshift(numbers.pop());
+  } else {
+    numbers.push(numbers.shift());
+  }
+
+  answer = numbers;
+
+  return answer;
+};
