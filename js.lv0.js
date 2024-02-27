@@ -2350,3 +2350,9 @@ const solution105_1 = (numbers, direction) => {
 
   return answer;
 };
+
+const solution105_2 = (numbers, direction) => {
+  return direction === "right"
+    ? [numbers[numbers.length - 1], ...numbers.slice(0, numbers.length - 1)]
+    : [...numbers.slice(1), numbers[0]];
+};
