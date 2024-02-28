@@ -2372,3 +2372,11 @@ const solution106 = (num_list, n) => {
   }
   return arr;
 };
+
+/////// 다른 사람 풀이
+
+const solution106_1 = (num_list, n) => {
+  return Array(num_list.length / n)
+    .fill([])
+    .map(() => num_list.splice(0, n));
+};
