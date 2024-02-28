@@ -2380,3 +2380,13 @@ const solution106_1 = (num_list, n) => {
     .fill([])
     .map(() => num_list.splice(0, n));
 };
+
+const solution106_2 = (num_list, n) => {
+  var answer = [];
+
+  while (num_list.length) {
+    answer.push(num_list.splice(0, n));
+  }
+
+  return answer;
+};
