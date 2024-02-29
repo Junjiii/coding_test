@@ -2413,3 +2413,11 @@ const solution107 = (dot) => {
     return 4;
   }
 };
+
+/////// 다른 사람 풀이
+
+const solution107_1 = (dot) => {
+  const [num, num2] = dot;
+  const check = num * num2 > 0;
+  return num > 0 ? (check ? 1 : 4) : check ? 3 : 2;
+};
