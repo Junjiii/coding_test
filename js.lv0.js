@@ -2553,3 +2553,10 @@ const solution112 = (emergency) => {
   }
   return rankArr;
 };
+
+//// 다른 사람 풀이
+
+const solution112_1 = (emergency) => {
+  let sorted = emergency.slice().sort((a, b) => b - a);
+  return emergency.map((v) => sorted.indexOf(v) + 1);
+};
