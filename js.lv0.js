@@ -2576,3 +2576,13 @@ const solution113 = (age) => {
     return acc;
   }, "");
 };
+
+///// 다른 사람 풀이
+
+const solution113_1 = (age) => {
+  return age
+    .toString()
+    .split("")
+    .map((v) => "abcdefghij"[v])
+    .join("");
+};
