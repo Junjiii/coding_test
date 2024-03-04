@@ -2586,3 +2586,10 @@ const solution113_1 = (age) => {
     .map((v) => "abcdefghij"[v])
     .join("");
 };
+
+const solution113_2 = (age) => {
+  let char = "abcdefghij";
+  return Array.from(age.toString())
+    .map((t) => char[+t])
+    .join("");
+};
