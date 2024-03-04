@@ -2597,6 +2597,3 @@ const solution113_2 = (age) => {
 const solution113_3 = (age) => {
   return age.toString().replace(/./g, (x) => "abcdefghij"[x]);
 };
-
-/////////a;sjhgoiasghsahg
-//////asdgkhaslughlasghil
