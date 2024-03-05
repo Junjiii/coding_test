@@ -2637,7 +2637,3 @@ const solution115_1 = (n) => {
 const solution116 = (n, k) => {
   return n * 12000 + (k - Math.floor(n / 10)) * 2000;
 };
-
-///////asdgas
-/////as/gasgasg
-/////asgashhheds
