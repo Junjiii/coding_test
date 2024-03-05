@@ -2620,3 +2620,9 @@ const solution115 = (n) => {
   }
   return result;
 };
+
+//////// 다른 사람 풀이
+const solution115_1 = (n) => {
+  var half = Math.floor(n / 2);
+  return half * (half + 1);
+};
