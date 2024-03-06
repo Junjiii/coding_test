@@ -2650,3 +2650,9 @@ const solution117 = (angle) => {
   else if (90 < angle && angle < 180) return 3;
   else if (angle === 180) return 4;
 };
+
+//////// 다른 사람 풀이
+
+const solution117_1 = (angle) => {
+  return [0, 90, 91, 180].filter((x) => angle >= x).length;
+};
