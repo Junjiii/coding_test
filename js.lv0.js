@@ -2660,3 +2660,14 @@ const solution117_1 = (angle) => {
 const solution117_2 = (angle) => {
   return angle < 90 ? 1 : angle === 90 ? 2 : angle < 180 ? 3 : 4;
 };
+
+const solution117_3 = (angle) => {
+  switch (angle) {
+    case 90:
+      return 2;
+    case 180:
+      return 4;
+    default:
+      return angle > 0 && angle < 90 ? 1 : 3;
+  }
+};
