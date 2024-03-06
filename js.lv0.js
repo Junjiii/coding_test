@@ -2671,5 +2671,3 @@ const solution117_3 = (angle) => {
       return angle > 0 && angle < 90 ? 1 : 3;
   }
 };
-
-///as/ga/sg/s
