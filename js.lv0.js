@@ -2656,3 +2656,7 @@ const solution117 = (angle) => {
 const solution117_1 = (angle) => {
   return [0, 90, 91, 180].filter((x) => angle >= x).length;
 };
+
+const solution117_2 = (angle) => {
+  return angle < 90 ? 1 : angle === 90 ? 2 : angle < 180 ? 3 : 4;
+};
