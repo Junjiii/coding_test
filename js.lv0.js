@@ -2681,3 +2681,10 @@ const solution117_3 = (angle) => {
 const solution118 = (my_string, letter) => {
   return [...my_string].filter((v) => v !== letter).join("");
 };
+
+///// 다른 사람 풀이
+
+const solution118_1 = (my_string, letter) => {
+  const answer = my_string.split(letter).join("");
+  return answer;
+};
