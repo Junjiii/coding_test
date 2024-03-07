@@ -2688,3 +2688,9 @@ const solution118_1 = (my_string, letter) => {
   const answer = my_string.split(letter).join("");
   return answer;
 };
+
+const solution118_2 = (my_string, letter) => {
+  return my_string.replaceAll(letter, "");
+};
+
+/////////////  test
