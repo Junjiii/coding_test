@@ -2705,3 +2705,11 @@ const solution119 = (my_string, n) => {
     return acc;
   }, "");
 };
+
+////// 다른 사람 풀이
+
+const solution119_1 = (my_string, n) => {
+  var answer = [...my_string].map((v) => v.repeat(n)).join("");
+  console.log(answer);
+  return answer;
+};
