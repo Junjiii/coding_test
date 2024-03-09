@@ -2725,3 +2725,15 @@ const solution120 = (num_list) => {
   const odd = num_list.filter((v) => v % 2);
   return [even.length, odd.length];
 };
+
+////// 다른 사람 풀이
+
+const solution120_1 = (num_list) => {
+  var answer = [0, 0];
+
+  for (let a of num_list) {
+    answer[a % 2] += 1;
+  }
+
+  return answer;
+};
