@@ -2767,3 +2767,11 @@ const sotution121 = (my_string) => [...my_string].reverse().join("");
 //  num_list의 원소의 순서를 거꾸로 뒤집은 배열을 return하도록 solution 함수를 완성해주세요.
 
 const solution122 = (num_list) => num_list.reverse();
+
+/////////////// 123. 나이 출력  /////////////
+
+// 문제
+// 머쓱이는 40살인 선생님이 몇 년도에 태어났는지 궁금해졌습니다.
+// 나이 age가 주어질 때, 2022년을 기준 출생 연도를 return 하는 solution 함수를 완성해주세요.
+
+const solution = (age) => 2022 - (age - 1);
