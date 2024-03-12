@@ -2795,3 +2795,14 @@ const solution124 = (money) => {
   }
   return result;
 };
+
+/////// 다른 사람 풀이
+
+const solution124_1 = (money) => {
+  let count = 0;
+  while (money >= 5500) {
+    money -= 5500;
+    count++;
+  }
+  return [count, money];
+};
