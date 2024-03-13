@@ -2810,5 +2810,3 @@ const solution124_1 = (money) => {
 const solution124_2 = (money) => {
   return [Math.floor(money / 5500), money % 5500];
 };
-
-/////////// a;sldjsal;jklfs
