@@ -2859,3 +2859,13 @@ const solution126 = (numbers, k) => {
 const solution126_1 = (numbers, k) => {
   return numbers[(--k * 2) % numbers.length];
 };
+
+const solution126_2 = (numbers, k) => {
+  return numbers[(2 * (k - 1)) % numbers.length];
+};
+
+const solution126_3 = (numbers, k) => {
+  const [idx, len] = [k * 2 - 1, numbers.length];
+  const findIdx = idx >= len ? idx % len : idx;
+  return findIdx;
+};
