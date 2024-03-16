@@ -2853,3 +2853,9 @@ const solution126 = (numbers, k) => {
   }
   return arr[arr.length - 1];
 };
+
+//////////   다른 사람 풀이
+
+const solution126_1 = (numbers, k) => {
+  return numbers[(--k * 2) % numbers.length];
+};
