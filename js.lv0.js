@@ -2885,5 +2885,3 @@ const solution127 = (balls, share) => {
   }
   return answer;
 };
-
-//////ㅁ나회ㅑㄴ
