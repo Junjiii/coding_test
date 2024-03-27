@@ -2908,5 +2908,3 @@ const solution128 = (sides) => {
   }
   return count;
 };
-
-////gjdfhdfhdsfheshgsdh
