@@ -2934,3 +2934,6 @@ const solution129 = (order) => {
 ////// 다른 사람 풀이
 const solution129_1 = (order) =>
   order.reduce((acc, cur) => acc + (cur.includes("latte") ? 5000 : 4500), 0);
+
+const solution129_2 = (order) =>
+  order.reduce((a, b) => a + (/cafelatte/.test(b) ? 5000 : 4500), 0);
