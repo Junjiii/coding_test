@@ -2930,3 +2930,7 @@ const solution129 = (order) => {
     return acc;
   }, 0);
 };
+
+////// 다른 사람 풀이
+const solution129_1 = (order) =>
+  order.reduce((acc, cur) => acc + (cur.includes("latte") ? 5000 : 4500), 0);
