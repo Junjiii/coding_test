@@ -2937,5 +2937,3 @@ const solution129_1 = (order) =>
 
 const solution129_2 = (order) =>
   order.reduce((a, b) => a + (/latte/.test(b) ? 5000 : 4500), 0);
-
-////ㄴㅇㅎㅇㄹ
