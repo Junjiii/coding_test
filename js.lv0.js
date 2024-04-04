@@ -2966,3 +2966,8 @@ const solution130_1 = (dots) => {
 
   return (Math.max(...x) - Math.min(...x)) * (Math.max(...y) - Math.min(...y));
 };
+
+const solution130_2 = (dots) => {
+  const [[x1, y1], [x2, y2], [x3, y3]] = dots.sort(([x1], [x2]) => x1 - x2);
+  return Math.abs(y1 - y2) * Math.abs(x1 - x3);
+};
