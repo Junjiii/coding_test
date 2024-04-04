@@ -2952,3 +2952,17 @@ const solution130 = (dots) => {
     Math.max(...dots.map((a) => a[1])) - Math.min(...dots.map((a) => a[1]));
   return width * height;
 };
+
+////////// 다른 사람 풀이
+
+const solution130_1 = (dots) => {
+  let x = [],
+    y = [];
+
+  for (let pos of dots) {
+    x.push(pos[0]);
+    y.push(pos[1]);
+  }
+
+  return (Math.max(...x) - Math.min(...x)) * (Math.max(...y) - Math.min(...y));
+};
