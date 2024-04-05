@@ -2971,3 +2971,25 @@ const solution130_2 = (dots) => {
   const [[x1, y1], [x2, y2], [x3, y3]] = dots.sort(([x1], [x2]) => x1 - x2);
   return Math.abs(y1 - y2) * Math.abs(x1 - x3);
 };
+
+/////////////// 131. 캐릭터의 좌표   /////////////
+
+// 문제
+// 캐릭터는 항상 [0,0]에서 시작할 때
+// 키 입력이 모두 끝난 뒤에 캐릭터의 좌표 [x, y]를 return하도록 solution 함수를 완성해주세요.
+
+const solution131 = (keyinput, board) => {
+  board[0] = (board[0] - 1) / 2;
+  board[1] = (board[1] - 1) / 2;
+  return keyinput.reduce(
+    (acc, v) => {
+      if (v === "right" && acc[0] + 1 <= board[0]) acc[0]++;
+      if (v === "left" && acc[0] - 1 >= -board[0]) acc[0]--;
+
+      if (v === "up" && acc[1] + 1 <= board[1]) acc[1]++;
+      if (v === "down" && acc[1] - 1 >= -board[1]) acc[1]--;
+      return acc;
+    },
+    [0, 0]
+  );
+};
