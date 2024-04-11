@@ -3104,3 +3104,16 @@ const solution133_1 = (n) => {
     .map((_, i) => i + 1)
     .filter((num) => num % 3 !== 0 && !num.toString().includes("3"))[n - 1];
 };
+
+const solution133_2 = (n) => {
+  var answer = 0;
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 == 0) {
+      n++;
+    }
+    if (String(i).includes("3") & (i % 3 != 0)) {
+      n++;
+    }
+  }
+  return n;
+};
