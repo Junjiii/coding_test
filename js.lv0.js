@@ -3137,3 +3137,9 @@ const solution134 = (a, b) => {
 
   return b === 1 ? 1 : 2;
 };
+
+///////// 다른 사람 풀이
+
+const solution134_1 = (a, b) => {
+  return Number((a / b).toFixed(10)) == a / b ? 1 : 2;
+};
