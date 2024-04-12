@@ -3117,3 +3117,23 @@ const solution133_2 = (n) => {
   }
   return n;
 };
+
+/////////////// 134. 유한소수 판별하기 /////////////
+
+// 문제
+// 두 정수 a와 b가 매개변수로 주어질 때,
+// a/b가 유한소수이면 1을, 무한소수라면 2를 return하도록 solution 함수를 완성해주세요.
+
+const solution134 = (a, b) => {
+  let g = 1;
+  for (let i = 1; i <= b; i++) {
+    if (a % i === 0 && b % i === 0) g = i;
+  }
+
+  b = b / g;
+
+  while (b % 2 === 0) b = b / 2;
+  while (b % 5 === 0) b = b / 5;
+
+  return b === 1 ? 1 : 2;
+};
