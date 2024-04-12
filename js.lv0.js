@@ -3143,3 +3143,7 @@ const solution134 = (a, b) => {
 const solution134_1 = (a, b) => {
   return Number((a / b).toFixed(10)) == a / b ? 1 : 2;
 };
+
+const solution134_2 = (a, b) => {
+  return (a / b).toString().length > 10 ? 2 : 1;
+};
