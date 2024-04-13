@@ -3147,3 +3147,5 @@ const solution134_1 = (a, b) => {
 const solution134_2 = (a, b) => {
   return (a / b).toString().length > 10 ? 2 : 1;
 };
+
+//////// a;sljlajsg;las
