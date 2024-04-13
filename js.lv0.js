@@ -3148,4 +3148,30 @@ const solution134_2 = (a, b) => {
   return (a / b).toString().length > 10 ? 2 : 1;
 };
 
-//////// a;sljlajsg;las
+/////////////// 135. 코드 처리하기 /////////////
+
+// 문제
+// 문자열 code를 통해 만들어진 문자열 ret를 return 하는 solution 함수를 완성해 주세요.
+
+const solution135 = (code) => {
+  let mode = 0;
+
+  const arr = [...code].reduce((acc, v, i) => {
+    if (mode === 0) {
+      if (v === "1") {
+        mode = 1;
+      } else if (v !== "1" && i % 2 === 0) {
+        acc.push(code[i]);
+      }
+    } else if (mode === 1) {
+      if (v === "1") {
+        mode = 0;
+      } else if (v !== "1" && i % 2 !== 0) {
+        acc.push(code[i]);
+      }
+    }
+    return acc;
+  }, []);
+
+  return !arr.length ? "EMPTY" : arr.join("");
+};
