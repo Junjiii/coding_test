@@ -3175,3 +3175,18 @@ const solution135 = (code) => {
 
   return !arr.length ? "EMPTY" : arr.join("");
 };
+
+///////////// 다른 사람 풀이
+
+const solution135_1 = (code) => {
+  let odd = false;
+  return (
+    Array.from(code).reduce((acc, v, i) => {
+      if (v === "1") {
+        odd = !odd;
+        return acc;
+      }
+      return i % 2 === (odd ? 1 : 0) ? acc + v : acc;
+    }, "") || "EMPTY"
+  );
+};
