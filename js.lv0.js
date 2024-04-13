@@ -3190,3 +3190,12 @@ const solution135_1 = (code) => {
     }, "") || "EMPTY"
   );
 };
+
+const solution135_2 = (code) => {
+  var answer = code
+    .replaceAll("1", "")
+    .split("")
+    .filter((val, idx) => idx % 2 === 0)
+    .join("");
+  return answer.length > 0 ? answer : "EMPTY";
+};
