@@ -3199,3 +3199,19 @@ const solution135_2 = (code) => {
     .join("");
   return answer.length > 0 ? answer : "EMPTY";
 };
+
+/////////////// 136. 수열과 구간 쿼리 4 /////////////
+
+// 문제
+// 위 규칙에 따라 queries를 처리한 이후의 arr를 return 하는 solution 함수를 완성해 주세요.
+
+const solution136 = (arr, queries) => {
+  queries.map(([s, e, k]) => {
+    for (i = s; i <= e; i++) {
+      if (i % k === 0) {
+        arr[i]++;
+      }
+    }
+  });
+  return arr;
+};
