@@ -3226,3 +3226,23 @@ const solution136_1 = (arr, queries) => {
   }
   return arr;
 };
+
+////////////// 137.  배열 만들기 4 /////////////
+
+// 문제
+// 위 작업을 마친 후 만들어진 stk를 return 하는 solution 함수를 완성해 주세요.
+
+const solution137 = (arr) => {
+  const str = [];
+  for (i = 0; i < arr.length; i++) {
+    if (!str.length) {
+      str.push(arr[i]);
+    } else if (str[str.length - 1] < arr[i]) {
+      str.push(arr[i]);
+    } else if (str[str.length - 1] >= arr[i]) {
+      str.pop();
+      i--;
+    }
+  }
+  return str;
+};
