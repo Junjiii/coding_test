@@ -3280,3 +3280,12 @@ const solution138 = (spell, dic) => {
   }
   return count;
 };
+
+/////////// 다른 사람 풀이
+const solution138_1 = (p, d) => {
+  return d.some((s) => p.sort().toString() == [...s].sort().toString()) ? 1 : 2;
+};
+
+const solution138_2 = (spell, dic) => {
+  return dic.filter((v) => spell.every((c) => v.includes(c))).length ? 1 : 2;
+};
