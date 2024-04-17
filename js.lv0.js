@@ -3262,3 +3262,21 @@ const solution137_1 = (arr) => {
   }
   return stk;
 };
+
+////////////// 138. 외계어 사전 /////////////
+
+// 문제
+// spell에 담긴 알파벳을 한번씩만 모두 사용한 단어가 dic에 존재한다면 1,
+// 존재하지 않는다면 2를 return하도록 solution 함수를 완성해주세요.
+
+const solution138 = (spell, dic) => {
+  let count = 2;
+  for (let word of dic) {
+    const result = spell.reduce((acc, v) => {
+      if (word.includes(v)) acc.push(1);
+      return acc;
+    }, []);
+    if (result.length === spell.length) count = 1;
+  }
+  return count;
+};
