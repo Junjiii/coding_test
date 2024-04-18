@@ -3318,3 +3318,15 @@ const solution139_1 = (my_string, queries) => {
   });
   return str.join("");
 };
+
+const solution139_2 = (my_string, queries) => {
+  const str = [...my_string];
+  queries.forEach(([s, e]) => {
+    while (s < e) {
+      [str[s], str[e]] = [str[e], str[s]];
+      s++;
+      e--;
+    }
+  });
+  return str.join("");
+};
