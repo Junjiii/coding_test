@@ -3330,3 +3330,5 @@ const solution139_2 = (my_string, queries) => {
   });
   return str.join("");
 };
+
+////// ㅁㄴ어ㅏㅚㅏㄴ멍 ㅘ
