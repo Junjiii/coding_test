@@ -3405,3 +3405,12 @@ function solution141_3(intStrs, k, s, l) {
 function solution142(q, r, code) {
   return [...code].filter((_, i) => i % q === r).join("");
 }
+
+/////////   다른 사람 풀이
+
+function solution142_1(q, r, code) {
+  return Array.from(code).reduce((result, word, i) => {
+    if (i % q === r) return result + word;
+    return result;
+  }, "");
+}
