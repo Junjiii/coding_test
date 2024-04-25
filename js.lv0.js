@@ -3370,3 +3370,18 @@ function solution141(intStrs, k, s, l) {
     return acc;
   }, []);
 }
+
+/////// 다른 사람 풀이
+
+function solution141_1(intStrs, k, s, l) {
+  return intStrs.map((v) => +v.slice(s, s + l)).filter((v) => v > k);
+}
+
+function solution141_2(intStrs, k, s, l) {
+  var answer = [];
+  intStrs.forEach((el) => {
+    const num = +el.substr(s, l);
+    if (num > k) answer.push(num);
+  });
+  return answer;
+}
