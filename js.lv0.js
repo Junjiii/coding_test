@@ -3385,3 +3385,12 @@ function solution141_2(intStrs, k, s, l) {
   });
   return answer;
 }
+
+function solution141_3(intStrs, k, s, l) {
+  return intStrs
+    .reduce((acc, e) => {
+      acc.push(+e.substr(s, l));
+      return acc;
+    }, [])
+    .filter((v) => v > k);
+} /////// 내 풀이보다 살짝 더 빠름
