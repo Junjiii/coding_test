@@ -3462,3 +3462,12 @@ function solution144(arr, queries) {
   });
   return arr;
 }
+
+/////// 다른 사람 풀이
+
+function solution144_1(arr, queries) {
+  queries.forEach(([s, e]) => {
+    while (s <= e) arr[s++]++;
+  });
+  return arr;
+}
