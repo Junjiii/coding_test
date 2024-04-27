@@ -3471,3 +3471,8 @@ function solution144_1(arr, queries) {
   });
   return arr;
 }
+
+function solution144_2(arr, queries) {
+  for (let [s, e] of queries) for (let i = s; i <= e; i++) arr[i]++;
+  return arr;
+}
