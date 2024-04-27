@@ -3436,3 +3436,12 @@ function solution143(m) {
 
   return a;
 }
+
+//////// 다른 사람 풀이
+
+function solution143_1(str) {
+  return [...str].reduce(
+    (p, c) => (p[c.charCodeAt() - (c === c.toLowerCase() ? 71 : 65)]++, p),
+    Array(52).fill(0)
+  );
+}
