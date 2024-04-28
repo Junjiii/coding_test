@@ -3476,3 +3476,28 @@ function solution144_2(arr, queries) {
   for (let [s, e] of queries) for (let i = s; i <= e; i++) arr[i]++;
   return arr;
 }
+
+////////////// 145. 조건에 맞게 수열 변환하기 2 /////////////
+
+// 문제
+// 이러한 작업을 x번 반복한 결과인 배열을 arr(x)라고 표현했을 때, arr(x) = arr(x + 1)인 x가 항상 존재합니다.
+//  이러한 x 중 가장 작은 값을 return 하는 solution 함수를 완성해 주세요.
+
+function solution145(arr) {
+  let idx = 0;
+  let prevArr = arr;
+  while (true) {
+    const changeCurArr = prevArr.map((a) => {
+      if (a >= 50 && a % 2 === 0) return a / 2;
+      if (a < 50 && a % 2 === 1) return a * 2 + 1;
+      return a;
+    });
+
+    const isAllSame = prevArr.every((a, i) => a === changeCurArr[i]);
+    if (isAllSame) break;
+    idx += 1;
+    prevArr = changeCurArr;
+  }
+
+  return idx;
+}
