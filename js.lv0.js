@@ -3534,3 +3534,24 @@ function solution145_2(arr, n = 0) {
   }
   return n;
 }
+
+////////////// 146.  /////////////
+
+// 문제
+// 정수 배열 arr가 주어집니다. 문제에서의 무작위의 수는 arr에 저장된 순서대로 주어질 예정이라고 했을 때,
+// 완성될 배열을 return 하는 solution 함수를 완성해 주세요.
+// 단, 완성될 배열의 길이가 k보다 작으면 나머지 값을 전부 -1로 채워서 return 합니다.
+
+function solution146(arr, k) {
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (result.length === k) break;
+    if (!result.includes(arr[i])) result.push(arr[i]);
+  }
+
+  while (result.length < k) {
+    result.push(-1);
+  }
+  return result;
+}
