@@ -3555,3 +3555,12 @@ function solution146(arr, k) {
   }
   return result;
 }
+
+/////// 다른 사람 풀이
+
+function solution146_1(arr, k) {
+  const set = new Set(arr);
+  return set.size < k
+    ? [...set, ...Array(k - set.size).fill(-1)]
+    : [...set].slice(0, k);
+}
