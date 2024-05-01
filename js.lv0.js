@@ -3587,3 +3587,21 @@ const solution147_1 = (picture, k) =>
   Array(picture.length * k)
     .fill(0)
     .map((v, i) => picture[~~(i / k)].replace(/./g, (v) => v.repeat(k)));
+
+////////////// 148. 전국 대회 선발 고사  /////////////
+
+// 문제
+// 전국 대회에 선발된 학생 번호들을 등수가 높은 순서대로 각각 a, b, c번이라고 할 때
+// 10000 × a + 100 × b + c를 return 하는 solution 함수를 작성해 주세요.
+
+function solution148(rank, attendance) {
+  let answer = [];
+  for (let i = 0; i < rank.length; i++) {
+    if (attendance[i]) answer.push(rank[i]);
+  }
+  answer.sort((a, b) => a - b);
+  function Participant(idx) {
+    return rank.indexOf(answer[idx]);
+  }
+  return 10000 * Participant(0) + 100 * Participant(1) + Participant(2);
+}
