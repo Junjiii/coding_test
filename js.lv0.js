@@ -3605,3 +3605,13 @@ function solution148(rank, attendance) {
   }
   return 10000 * Participant(0) + 100 * Participant(1) + Participant(2);
 }
+
+//////// 다른 사람 풀이
+
+function solution148_1(rank, attendance) {
+  const [a, b, c] = rank
+    .map((r, i) => [r, i])
+    .filter(([_, i]) => attendance[i])
+    .sort(([a], [b]) => a - b);
+  return 10000 * a[1] + 100 * b[1] + c[1];
+}
