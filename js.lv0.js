@@ -3580,3 +3580,10 @@ function solution147(picture, k) {
     return acc;
   }, []);
 }
+
+////////// 다른 사람 풀이
+
+const solution147_1 = (picture, k) =>
+  Array(picture.length * k)
+    .fill(0)
+    .map((v, i) => picture[~~(i / k)].replace(/./g, (v) => v.repeat(k)));
