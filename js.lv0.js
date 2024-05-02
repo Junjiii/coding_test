@@ -3615,3 +3615,29 @@ function solution148_1(rank, attendance) {
     .sort(([a], [b]) => a - b);
   return 10000 * a[1] + 100 * b[1] + c[1];
 }
+
+////////////// 149. 정사각형으로 만들기  /////////////
+
+// 문제
+// 이차원 정수 배열 arr이 매개변수로 주어집니다.
+// arr의 행의 수가 더 많다면 열의 수가 행의 수와 같아지도록 각 행의 끝에 0을 추가하고,
+// 열의 수가 더 많다면 행의 수가 열의 수와 같아지도록 각 열의 끝에 0을 추가한 이차원 배열을 return 하는 solution 함수를 작성해 주세요.
+
+function solution149(arr) {
+  const columnLength = arr.length;
+  const lowLength = arr[0].length;
+
+  if (lowLength > columnLength) {
+    const element = new Array(lowLength).fill(0);
+    for (let i = 0; i < lowLength - columnLength; i++) {
+      arr.push(element);
+    }
+  } else if (lowLength < columnLength) {
+    arr.forEach((e) => {
+      for (let i = 0; i < columnLength - lowLength; i++) {
+        e.push(0);
+      }
+    });
+  }
+  return arr;
+}
