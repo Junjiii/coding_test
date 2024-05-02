@@ -3650,3 +3650,24 @@ function solution149_1(arr) {
   while (arr.length < n) arr.push(Array(n).fill(0));
   return arr;
 }
+
+function solution149_2(arr) {
+  const ROWS = arr.length;
+  const COLS = arr[0].length;
+  const DIFF = Math.abs(ROWS - COLS);
+
+  if (ROWS > COLS) {
+    for (let i = 0; i < ROWS; i++) {
+      for (let j = 0; j < DIFF; j++) {
+        arr[i].push(0);
+      }
+    }
+  } else if (ROWS < COLS) {
+    for (let i = 0; i < DIFF; i++) {
+      const row = new Array(COLS).fill(0);
+      arr.push(row);
+    }
+  }
+
+  return arr;
+}
