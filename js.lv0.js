@@ -3671,3 +3671,23 @@ function solution149_2(arr) {
 
   return arr;
 }
+
+function solution149_3(arr) {
+  const xLength = arr.length;
+  const yLength = arr[0].length;
+
+  if (xLength === yLength) return arr;
+
+  const MaxLength = Math.max(xLength, yLength);
+  const answer = Array.from({ length: MaxLength }, () =>
+    Array(MaxLength).fill(0)
+  );
+
+  for (let x = 0; x < xLength; x++) {
+    for (let y = 0; y < yLength; y++) {
+      answer[x][y] = arr[x][y];
+    }
+  }
+
+  return answer;
+}
