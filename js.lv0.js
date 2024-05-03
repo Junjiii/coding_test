@@ -3691,3 +3691,5 @@ function solution149_3(arr) {
 
   return answer;
 }
+
+///// ㅁㄴ;리ㅓ나ㅓㄹ ㅣ
