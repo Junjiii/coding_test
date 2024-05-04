@@ -3717,3 +3717,15 @@ function solution150_1(chicken) {
   var answer = parseInt((chicken - 1) / 9);
   return answer;
 }
+
+function solution150_2(chicken) {
+  let answer = 0;
+  let coupon = chicken;
+
+  while (coupon >= 10) {
+    answer = answer + parseInt(coupon / 10);
+    coupon = parseInt(coupon / 10) + (coupon % 10);
+  }
+
+  return answer;
+}
