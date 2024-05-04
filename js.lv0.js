@@ -3710,3 +3710,10 @@ function solution150(chicken) {
 
   return answer;
 }
+
+///////// 다른 사람 풀이
+
+function solution150_1(chicken) {
+  var answer = parseInt((chicken - 1) / 9);
+  return answer;
+}
