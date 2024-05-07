@@ -3782,3 +3782,9 @@ function solution152_2(A, B) {
   }
   return -1;
 }
+
+var solution152_3 = (A, B) =>
+  new Array(A.length)
+    .fill(A)
+    .map((s, i) => s.slice(A.length - i) + s.slice(0, A.length - i))
+    .indexOf(B);
