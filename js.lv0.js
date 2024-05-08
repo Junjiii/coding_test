@@ -3811,3 +3811,11 @@ function solution153(id_pw, db) {
   }
   return message;
 }
+
+/////// 다른 사람 풀이
+
+function solution153_1(id_pw, db) {
+  const [id, pw] = id_pw;
+  const map = new Map(db);
+  return map.has(id) ? (map.get(id) === pw ? "login" : "wrong pw") : "fail";
+}
