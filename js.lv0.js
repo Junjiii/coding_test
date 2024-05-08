@@ -3788,3 +3788,26 @@ var solution152_3 = (A, B) =>
     .fill(A)
     .map((s, i) => s.slice(A.length - i) + s.slice(0, A.length - i))
     .indexOf(B);
+
+///////////// 153. 로그인 성공? /////////////
+
+// 문제
+// 머쓱이는 프로그래머스에 로그인하려고 합니다.
+// 머쓱이가 입력한 아이디와 패스워드가 담긴 배열 id_pw와 회원들의 정보가 담긴 2차원 배열 db가 주어질 때,
+// 아이디와 비밀번호가 모두 일치하는 회원정보가 있으면 "login"을 return합니다.
+// 로그인이 실패했을 때 아이디가 일치하는 회원이 없다면 “fail”를,
+// 아이디는 일치하지만 비밀번호가 일치하는 회원이 없다면 “wrong pw”를 return 합니다.
+
+function solution153(id_pw, db) {
+  let message = "fail";
+  for (let [id, pw] of db) {
+    if (id === id_pw[0] && pw === id_pw[1]) {
+      message = "login";
+      break;
+    } else if (id === id_pw[0] && pw !== id_pw[1]) {
+      message = "wrong pw";
+      break;
+    }
+  }
+  return message;
+}
