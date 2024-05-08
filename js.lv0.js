@@ -3819,3 +3819,13 @@ function solution153_1(id_pw, db) {
   const map = new Map(db);
   return map.has(id) ? (map.get(id) === pw ? "login" : "wrong pw") : "fail";
 }
+
+function solution153_2(id_pw, db) {
+  db = db.filter((v) => v[0] === id_pw[0]);
+
+  if (!db.length) return "fail";
+
+  for (let d of db) if (d[1] === id_pw[1]) return "login";
+
+  return "wrong pw";
+}
