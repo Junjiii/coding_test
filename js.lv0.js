@@ -3865,5 +3865,3 @@ function solution154_2(score) {
   let sorted = avg.slice().sort((a, b) => b - a);
   return avg.map((v) => sorted.indexOf(v) + 1);
 }
-
-////// ㅗ니ㅏㅁㄴ로어
