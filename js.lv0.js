@@ -3879,3 +3879,13 @@ function solution155(n) {
     }
   }
 }
+
+////////// 다른 사람 풀이
+
+function solution155_1(n, x = 1) {
+  while (x++) {
+    if (n % x === 1) {
+      return x;
+    }
+  }
+}
