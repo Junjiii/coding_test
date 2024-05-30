@@ -3904,3 +3904,9 @@ function solution156(absolutes, signs) {
   }
   return result;
 }
+
+//////// 다른 사람 풀이
+
+function solution156_1(absolutes, signs) {
+  return absolutes.reduce((acc, val, i) => acc + val * (signs[i] ? 1 : -1), 0);
+}
